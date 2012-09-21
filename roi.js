@@ -13,9 +13,9 @@ Template.leftSidebar.events({
 	}
     });
 
-//Template.tabs.selected = function () {
- //   return Session.equals("selected_tab",this._id) ? "selected" : '';
-
+Template.tabs.selected = function () {
+    return Session.equals("selected_tab",this._id) ? "selected" : '';
+    };
 
 }
 
