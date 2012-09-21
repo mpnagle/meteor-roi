@@ -39,7 +39,7 @@
 
 <template name="PatientEnrollment">
   <div class="intro_text" id="Step 1">
-    <span id= "step_1">Step 1: Introduction. Lorem ipsem ... </span>
+    <span id= "step_1">Step 1: Introduction. {{> LoremIpsem }} </span>
   </div>
   <div class = "enrollment_form" id="form_1">
     Initial Enrollment
@@ -54,7 +54,7 @@
 
 <template name="Technology">
   <div class="intro_text" id="Step 2">
-    <span id="step_2">Step 2 - Instructions <p> Lorem ipsem...</span>
+    <span id="step_2">Step 2 - Instructions <p> {{> LoremIpsem }}</span>
   </div>
   
   <div class="enrollment_form" id = "form_2">
@@ -131,7 +131,7 @@
 
 <template name="Step_3">
   <div class="intro_text" id="step 3">
-    <span id="step_3">Step 3 - Instructions. Lorem ipsem...</span>
+    <span id="step_3">Step 3 - Instructions. {{> LoremIpsem}}</span>
   </div>
 
   <b> Find Staffing Elements </b>
@@ -209,7 +209,7 @@
 
 <template name = "Step_4">
   <div class="intro_text" id="step 4">
-     <span id="step_4">Step 4 - Instructions. Lorem ipsem...</span>
+     <span id="step_4">Step 4 - Instructions. {{> LoremIpsem}}</span>
   </div>
 
   <div class="enrollment_form">
@@ -275,7 +275,7 @@
 
 <template name="Step_5">
   <div class="intro_text" id="step_5">
-     <span id="step_5">Step 5 - Instructions. Lorem ipsem...</span>
+     <span id="step_5">Step 5 - Instructions. {{> LoremIpsem}}</span>
   </div>
   
   <div class="enrollment_form">
@@ -318,7 +318,11 @@
   </div>
 </template>
 
-	  
+<template name="LoremIpsem">
+  <div id="loremIpsem">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+  </div>
+</template>
 
 
 	  
