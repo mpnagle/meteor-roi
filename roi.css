@@ -2,7 +2,15 @@
 
 #left {
     cursor: pointer;
-    background-color: red;
+    display: inline;
+    float: left;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-right: 50px;
+}
+
+#right {
+    display: inline;
 }
 
 
