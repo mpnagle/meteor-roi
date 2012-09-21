@@ -1,5 +1,6 @@
 /* CSS declarations go here */
 
-leftSidebar {
+#leftSidebar {
     cursor: pointer;
+    background-color: red;
 }
