@@ -1,5 +1,10 @@
 /* CSS declarations go here */
 
+body {
+    font-family: 'Helvetica Neue', Helvetica;
+
+    }
+
 #left {
     cursor: pointer;
     display: inline;
@@ -7,10 +12,16 @@
     margin-left: 20px;
     margin-top: 10px;
     margin-right: 50px;
+    height: 1000px;
+}
+
+.tab.selected {
+    background-color:yellow;
 }
 
 #right {
     display: inline;
+    margin-top: 10px;
 }
 
 #loremIpsem {

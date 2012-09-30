@@ -9,8 +9,14 @@
   </div>
 
   <div id="right">
-    
+
+    {{> Step_0}}
+    {{> Step_1}}
+    {{> Step_2}}
+    {{> Step_3}}
+    {{> Step_4}}
     {{> Step_5}}
+
     
   </div>
   
@@ -29,30 +35,78 @@
   </div>
 </template>
 
-<template name ="introduction">
+<template name ="Step_0">
+  {{#if show}}
   <div id="introduction">
-    <span id= "block_1">Introduction: Lorem ipsem .... </span>
-    <span id= "block_2">Before You Get Started: Lorem ipsem ... </span>
-    <span id= "block_3">About the ROI: Lorem ipsem ... </span>
+    <span id= "block_1">Introduction: Lorem ipsem .... </span><p>
+    <span id= "block_2">Before You Get Started: Lorem ipsem ... </span><p>
+    <span id= "block_3">About the ROI: Lorem ipsem ... </span><p>
   </div>
+  {{/if}}
 </template>
 
-<template name="PatientEnrollment">
+<template name="Step_1">
+  {{#if show}}
   <div class="intro_text" id="Step 1">
     <span id= "step_1">Step 1: Introduction. {{> LoremIpsem }} </span>
   </div>
-  <div class = "enrollment_form" id="form_1">
-    Initial Enrollment
-    <input id="initial_enrollment" type="text" />
-    Year 5 Enrollment Goal
-    <input id="year_5_enrollment" type="text" />
-    Intervention Months
-    <input id="intervention_months" type="text" />
+  
+ 
+  {{> Form_1}}
+    
+
+  {{/if}}
+</template>
+
+<template name="Form_1">
+  <div id="Form_1">
+    Initial Enrollment 
+    <input id="A1" class="first_enroll" type="text" /> <p>
+    Year 5 Enrollment Goal 
+    <input id="A2" class="year_5_enroll" type="text" /> <p>
+    Intervention Months 
+    <input id="A3" class="intervention_mo" type="text" /> <p>
+
+    <button id="submit_1" value="submit_1" >Submit</button>
   </div>
+
+<table> 
+  <tr> 
+    <td> Category </td>
+    <td> Y1 </td>
+    <td> Y2 </td>
+    <td> Y3 </td>
+    <td> Y4 </td>
+    <td> Y5 </td>
+  </tr>
+  <tr>
+    <td> Number of Patients Enrolled </td>
+    <td> {{A1}} </td>
+    <td> {{cell2}} </td>
+    <td> {{cell3}} </td>
+    <td> {{cell4}} </td>
+    <td> {{cell5}} </td>
+  </tr>
+  
+  <tr>
+    <td> Enrolled at One Time </td>
+    <td> {{cell6}} </td>
+    <td> {{cell7}} </td>
+    <td> {{cell8}} </td>
+    <td> {{cell9}} </td>
+    <td> {{cell10}} </td>
+  </tr>
+
+
+
+</table>
+
 </template>
 
 
-<template name="Technology">
+
+<template name="Step_2">
+  {{#if show}}
   <div class="intro_text" id="Step 2">
     <span id="step_2">Step 2 - Instructions <p> {{> LoremIpsem }}</span>
   </div>
@@ -127,9 +181,11 @@
 
     
   </div>
+  {{/if}}
 </template>
 
 <template name="Step_3">
+  {{#if show}}
   <div class="intro_text" id="step 3">
     <span id="step_3">Step 3 - Instructions. {{> LoremIpsem}}</span>
   </div>
@@ -205,9 +261,11 @@
       </tr>
     </table>
   </div>
+  {{/if}}
 </template>
 
 <template name = "Step_4">
+  {{#if show}}
   <div class="intro_text" id="step 4">
      <span id="step_4">Step 4 - Instructions. {{> LoremIpsem}}</span>
   </div>
@@ -271,9 +329,11 @@
       </tr>
     </table>
   </div>
+  {{/if}}
 </template>
 
 <template name="Step_5">
+  {{#if show}}
   <div class="intro_text" id="step_5">
      <span id="step_5">Step 5 - Instructions. {{> LoremIpsem}}</span>
   </div>
@@ -316,6 +376,7 @@
       </tr>
     </table>
   </div>
+  {{/if}}
 </template>
 
 <template name="LoremIpsem">
