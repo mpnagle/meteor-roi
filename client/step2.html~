@@ -1,0 +1,88 @@
+<template name="Step_2">
+  {{#if show}}
+
+
+
+
+  <div class="intro_text" id="Step 2">
+    <span id="step_2">Step 2 - Instructions ... LoremIpsem </span>
+  
+  <div class="enrollment_form" id = "form_2">
+    <b>One-time Technology Costs:</b>
+    <table id="one_time_costs">
+      <tr>
+    <td>Type</td>
+    <td>Cost</td>
+    <td>Classification</td>
+    <td>Time</td>
+      </tr>
+      <tr> 
+    
+    <td> 
+        <div id="techOneType">
+        </div>
+    </td>
+    <td>
+        <div id="techOneCost">
+        </div>
+    </td>
+    <td>
+        <div id="techOneClass">
+        </div>
+    </td>
+    <td>
+        <div id="techOneTime">
+        </div>
+    </td>
+      </tr>
+    </table>
+
+
+      
+   <button id="addRowOneTech">Add</button>
+    
+    <b>Recurring Technology Costs:</b>
+    <table id="recurring_costs">
+      <tr>
+    <td>Type</td>
+    <td>Cost</td>
+    <td>Frequency Billed</td>
+      </tr>
+      <tr>
+    <td>
+        <div id="techRecurType">
+        </div>
+    </td>
+    <td>
+        <div id="techRecurCost">
+        </div>
+    </td>
+    <td>
+        <div id="techRecurFreq">
+        </div>
+    </td>
+      </tr>
+    </table>
+    <div id="techRecurCellular">
+      <b>% patients on cellular</b>
+      <input id="percentCell" type="text">
+    </div>
+
+<a id = "calculateStep2" href='#'>calculate</a>
+    
+      <button id="addRowRecurringTech">Add</button>
+    
+    <ul id='calculation3'></ul>
+            </div>   
+
+
+    <button>Submit</button>
+  </div>
+
+
+</div>
+
+
+  
+  {{/if}}
+</template>

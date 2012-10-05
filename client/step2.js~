@@ -1,0 +1,63 @@
+Template.Step_2.newRowStep2OneTimeCosts = function() {
+    console.log('createRowPage2');
+    var typeTech = $('<select></select>');
+    typeTech.append('<option value="med"">Medical Devices (Purchased)</option>');
+    typeTech.append('<option value="infra">Infrastructure</option>');
+    typeTech.append('<option value="other">Other</option>');
+    $("#techOneType").append(typeTech);
+
+    var cost = $("<input>", {
+        type: 'text'
+    });
+    $('#techOneCost').append(cost);
+
+    var classTech = $('<select></select>');
+    classTech.append('<option value="shelf">Shelf Life</option>');
+    classTech.append('<option value="amortize">Amortize</option>');
+    $('#techOneClass').append(classTech);
+
+    var techTime = $("<input>", {
+        type: 'text'
+    });
+    $('#techOneTime').append(techTime);
+}
+
+
+
+
+
+
+
+Template.Step_2.events({
+    
+	
+
+
+	'click #calculateStep2': function(){
+	    
+	    
+	
+	    var cost1 = parseInt($('#cost1').val());
+	    var type1 = $('#type1').val();
+	    var class1 = $('#class1').val();
+	    var time1 = parseInt($('#time1').val());
+	    
+	    
+	    $('ul#calculation3').append("<li> "+ "First row: " + cost1 + " " + type1 + " " + class1 + " " + time1 + "</li>");
+	    
+	    
+	    var costRecur1 = parseInt($('#costRecur1').val());
+	    var typeRecur1 = $('#typeRecur1').val();
+	    var freq1 = $('#freq1').val();
+	    var percentCell = parseInt($('#percentCell').val());
+	
+	    $('ul#calculation3').append("<li> " + "Second row: " + costRecur1 + " " + typeRecur1 + " " + freq1 + " " + percentCell);
+	    
+	    console.log("clicking in step2.js");
+
+
+	}
+    
+});
+
+

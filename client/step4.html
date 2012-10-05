@@ -1,0 +1,39 @@
+<template name = "Step_4">
+  {{#if show}}
+  <div class="intro_text" id="step 4">
+     <span id="step_4">Step 4 - Instructions. {{> LoremIpsem}}</span>
+  </div>
+
+
+
+  <div class="enrollment_form">
+   
+    
+    Screen Four: Miscellaneous Costs
+    <table id="recurring_costs">
+      <tr>
+    <td>Type</td>
+    <td>Cost</td>
+    <td>Frequency Billed</td>
+      </tr>
+     
+      <tr>
+    <td>
+        <div id="miscType">
+            </div>
+    </td>
+    <td>
+        <div id="miscCost">
+        </div>
+          </td>
+          <td>
+              <div id="miscFreq">
+                  </div>
+    </td>
+      </tr>
+    </table>
+            <button id="addRowMisc">Add</button>
+  </div>
+
+{{/if}}
+</template>

@@ -1,0 +1,44 @@
+<template name="Step_1">
+  {{#if show}}
+  
+  <div class="intro_text" id="Step 1">
+    <span id="step_1">Step 1 - Instructions {{> LoremIpsem}} </span>
+  </div>
+
+  <div id="Form_1">
+    Initial Enrollment 
+    <input id="initialEnroll" type="text" /> <p />
+    Year 5 Enrollment Goal 
+    <input id="year5Enroll" type="text" /> <p />
+    Intervention Months 
+    <input id="monthsEnroll" type="text" /> <p />
+    
+      
+    <button id = "calculateStep1">Calculate</button>
+    
+    <div> 
+      Enrollment Summary:
+    </div>
+    
+    <table id="enrollSummary">
+      <tr>
+	<td></td>
+	<td>Year 1</td>
+	<td>Year 2</td>
+	<td>Year 3</td>
+	<td>Year 4</td>
+	<td>Year 5</td>
+      </tr>
+      <tr>
+	<td>Total Patient Enrollment:</td>
+	<td>
+	</td>
+      </tr>
+      <tr>
+	<td>Concurrent Patient Enrollment:</td>
+      </tr>
+    </table>    
+  </div>
+
+{{/if}}
+</template>

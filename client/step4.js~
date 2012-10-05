@@ -1,0 +1,34 @@
+Template.Step_4.newRowMiscCosts= function() {
+    var type = $('<select></select>');
+    type.append('option value="misc_fees">Misc. Tech Fees</option>');
+    type.append('<option value="services">Services</option>');
+    type.append('<option value="subscriptions">Subscriptions</option>');
+    type.append('<option value="other">Other</option>');
+    $('#miscType').append(type);
+
+    var cost = $("<input>", {
+        type: 'text'
+    });
+    $('#miscCost').append(cost);
+
+    var freq = $('<select></select>');
+    freq.append('<option value="annual">Annual</option>');
+    freq.append('<option value="monthly_unit">Monthly/Unit</option>');
+    freq.append('<option value="monthly_patient">Monthly/Patient</option>');
+    freq.append('<option value="yearly_unit">Yearly/Unit</option>');
+    freq.append('<option value="yearly_patient">Yearly/Patient</option>');
+    freq.append('<option value="one_time_patient">One Time/Patient</option>');
+    $('#miscFreq').append(freq);
+
+}
+
+//initialize
+//newRowMiscCosts();
+
+
+Template.Step_4.events({
+
+    'click #addRowMisc':function() {
+    newRowMiscCosts();
+	}
+    });
