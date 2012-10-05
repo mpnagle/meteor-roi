@@ -50,6 +50,13 @@ Template.tabs.selected = function () {
 	return Session.equals ("which_screen", 5);
     };
 
+    Template.Summary.show = function () {
+	return Session.equals ("which_screen", 6);
+    };
+
+    Template.returnOnInvestment.show = function () {
+	return Session.equals ("which_screen", 7);
+    };
     
 }
 
@@ -67,6 +74,8 @@ if (Meteor.isServer) {
 		   "Step 3 -- Staffing",
 		   "Step 4 -- Other",
 		   "Step 5 -- Outcomes",
+		   "Summary",
+		   "Total Return On Investment"
 		  ]; 
       
       Sections.remove({});
@@ -82,13 +91,3 @@ if (Meteor.isServer) {
       
   });
 }
-
-/*
-Handlebars.global
-
-if the end of step_# === index 
- true
-else
- false
-
-*/

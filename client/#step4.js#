@@ -32,3 +32,10 @@ Template.Step_4.events({
     Template.Step_4.newRowMiscCosts();
 	}
     });
+
+Template.Step_4.InitializeStep4 = function(){
+    Meteor.defer(
+	function(){
+	    Template.Step_4.newRowMiscCosts();
+	});
+}

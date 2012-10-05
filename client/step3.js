@@ -89,3 +89,13 @@ Template.Step_3.events({
     Template.Step_3.newRowStep3VariableStaffing();
 }
     });
+
+
+
+Template.Step_3.InitializeStep3 = function(){
+    Meteor.defer(
+	function(){
+	    Template.Step_3.newRowStep3FixedStaffing();
+	    Template.Step_3.newRowStep3VariableStaffing();
+	});
+}

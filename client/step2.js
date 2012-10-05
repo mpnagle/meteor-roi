@@ -102,5 +102,9 @@ Template.Step_2.events({
 
 
 Template.Step_2.InitializeStep2 = function(){
-    Meteor.defer(newRowStep2OneTimeCost);
+    Meteor.defer(
+	function(){
+	    Template.Step_2.newRowStep2OneTimeCosts();
+	    Template.Step_2.newRowStep2RecurCosts();
+	});
 }
