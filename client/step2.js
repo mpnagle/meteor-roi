@@ -66,7 +66,7 @@ Template.Step_2.newRowStep2RecurCosts = function() {
 Template.Step_2.events({
     
         'click #addRowOneTech': function(){
-	        Template.Step_2.newRowStep2OneTimeCosts();
+	    Template.Step_2.newRowStep2OneTimeCosts();
 	},
 
         'click #addRowRecurringTech': function(){
@@ -101,3 +101,10 @@ Template.Step_2.events({
 });
 
 
+Template.Step_2.InitializeStep2 = function(){
+    Meteor.defer(
+	function(){
+	    Template.Step_2.newRowStep2OneTimeCosts();
+	    Template.Step_2.newRowStep2RecurCosts();
+	});
+}

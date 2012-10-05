@@ -36,3 +36,11 @@ Template.Step_5.events({
     }
 });
 
+
+Template.Step_5.InitializeStep5 = function(){
+    Meteor.defer(
+	function(){
+	    Template.Step_5.addRowOutcomes();
+	});
+}
+
