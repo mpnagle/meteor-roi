@@ -1,15 +1,19 @@
 <template name="returnOnInvestment">
 
-{{#if show}}
+  {{#if show}}
 
   <div id="introduction">
     {{> LoremIpsem}}
   </div>
   
-  <div id="ROITable">
-    
-    <table>
-      
+  {{InitializeROI}}
+  
+  
+<div>
+<table id="returnsTable">
+  
+  
+  
       <tr>
 	<td> Category </td>
 	<td> Year 1 </td>
@@ -20,19 +24,39 @@
       </tr>
       <tr>
 	<td> Patient Enrollment: </td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
       </tr>
       <tr>
 	<td> Total Operating Costs: </td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
       </tr>
       <tr>
-	<td> Total Return: </td>
+	<td> Total Outcomes: </td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
       </tr>
       <tr>
 	<td> ROI: </td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>	
       </tr>
-    </table>
-  </div>
-  
+  </table>
+</div>
+
 {{/if}}
 
 </template>

@@ -1,72 +1,96 @@
 <template name = "Summary">
-  {{#if show}}
-  
+ 
+ {{InitializeSummary}}
+ {{#if show}}
 
-  <div id="resultsTable">
-    <table>
-      Total Cost Per Patient Per Year:
-      <tr>
-	<td>
-	  Category
-	</td>
-	<td>
-	  Year 1
-	</td>
-	<td>
-	  Year 2
-	</td>
-	<td>
-	  Year 3
-	</td>
-	<td>
-	  Year 4
-	</td>
-	<td>
-	  Year 5
-	</td>
-      </tr>
-      <tr>
-	<td>
-	  Total Tech & Operating Costs
-	</td>
-      </tr>
-      <tr>
-	<td>
-	  Tech & Operating Costs Per Patient
-	</td>
-      </tr>
-      <tr>
-	<td>
-	Total Staffing Costs
-	</td>
-      </tr>
-      <tr>
-	<td>Staffing Cost Per Patient</td>
-      </tr>
-      <tr>
-      <td>
-	Other Costs
-      </td>
+ {{> LoremIpsem}}
+
+
+ <table id = "totalTechSummary">
+    <tr>      
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
-      <tr>
-	<td>
-	  Other Costs Per Patient
-	</td>
-      </tr>
-      <tr>
-	<td>
-	  Total Cost 
-	</td>
-      </tr>
-      <tr>
-	<td>
-	  Total Cost Per Patient
-	</td>
-      </tr>
-      
-    </table>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    
+  </table>
+
+  <table id = "totalStaffSummary">
+    <tr>
+
+      <td></td>      
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    
+  </table>
+
+
+  <table id = "totalMiscSummary">
+    <tr>
+
+      <td></td>      
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    
+  </table>
+  <table id = "totalCosts">
+    <tr>
+
+      <td></td>      
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    
+  </table>
+
     
     {{/if}}
     
-  </div>
+
 </template>

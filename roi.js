@@ -9,11 +9,10 @@ if (Meteor.isClient) {
 
 Template.leftSidebar.events({
     'click': function () {
-//	Session.set("selected_tab", this);
+
 	Session.set("selected_id", this._id);
-	console.log(this);
 	Session.set("which_screen", this.index);
-	console.log("current index: " + Session.get("which_screen"));
+	console.log("which_screen: " + this.index);
     }
 });
 
@@ -51,7 +50,8 @@ Template.tabs.selected = function () {
     };
 
     Template.Summary.show = function () {
-	return Session.equals ("which_screen", 6);
+    return Session.equals ("which_screen", 6);
+
     };
 
     Template.returnOnInvestment.show = function () {

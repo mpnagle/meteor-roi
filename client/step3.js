@@ -1,11 +1,18 @@
 // rowIndex keeps track of what we are adding. The total number of rows is rowIndex + 1.
 // We start with -1 so that when we increment we're at 0.
-
 var rowIndexFixedStaffing = -1;
 var rowIndexVarStaffing = -1;
+
 var fixedStaffData = [];
 var variableStaffData = [];
 
+var fixedStaffCosts = [0,0,0,0,0];
+var variableStaffCosts = [0,0,0,0,0];
+
+//var totalStaffCosts = [0,0,0,0,0];
+
+//for debugging only
+var totalStaffCosts = [25000,25000,25000,25000,25000];
 
 Template.Step_3.newRowStep3FixedStaffing = function() {
 
@@ -85,7 +92,7 @@ Template.Step_3.newRowStep3VariableStaffing = function() {
 
     $('#staffVarSalary').append(salaryStaffVariable); 
 
-   var staffPatientLoad = $("<input +id=staffPatientLoad" + rowIndexVarStaffing + ">", {
+   var staffPatientLoad = $("<input id=staffPatientLoad" + rowIndexVarStaffing + ">", {
         type: 'text'
     });
 
@@ -159,7 +166,7 @@ Template.Step_3.getDataStep3 = function(){
 	
 	//adding currentRow to the fixedStaffData matrix
 	fixedStaffData.push(currentRow);
-	console.log(fixedStaffData);
+	//console.log(fixedStaffData);
 	
     }
 
@@ -182,7 +189,7 @@ Template.Step_3.getDataStep3 = function(){
 	
 	//adding currentRow to the fixedStaffData matrix
 	variableStaffData.push(currentRow);
-	console.log(variableStaffData);
+	//console.log(variableStaffData);
 	
     }
 
@@ -193,17 +200,19 @@ Template.Step_3.getDataStep3 = function(){
 
 Template.Step_3.calculateStep3 = function () {
 
+
+    Template.Step_3.getDataStep3();
     
     //fixedStaffCosts is an array for years 1 - 5, starting at $0 for each year.
     fixedStaffCosts = [0,0,0,0,0];
-    
+    variableStaffCosts = [0,0,0,0,0];
     
     //iterating through fixedStaffData  
     for (i=0; i<fixedStaffData.length; i++)
     {
 	console.log("in cost loop --- " + i);
 	console.log("fixedStaffData length" + fixedStaffData.length);
-
+	
 	currentPercent = parseInt(fixedStaffData[i][2]);
 	currentSalary = parseInt(fixedStaffData[i][3]);
 	
@@ -211,25 +220,83 @@ Template.Step_3.calculateStep3 = function () {
 	
 	
 	costFiveYearArray = [];
-	for (j=0; j<5; j++)
-	{
+	for (j=0; j<5; j++)	{
 	    costFiveYearArray.push(currentCost);
 	}
 
 	console.log("costFiveYearArray is " + costFiveYearArray);
 	
-	for (k=0; k<5; k++)
-	{
+	for (k=0; k<5; k++)	{
 	    fixedStaffCosts[k] += costFiveYearArray[k];
 	}
 
-    
+	
+	
+
 
     }
     
-    console.log(fixedStaffCosts);
+
+    console.log("variableStaffData.length: " + variableStaffData.length);
+    //iterating over rows
+    for (i=0; i<variableStaffData.length; i++)
+    {
+	
+	
+	currentPercent = parseInt(variableStaffData[i][2]);
+	currentSalary = parseInt(variableStaffData[i][3]);
+	costPerEmployee = currentPercent * currentSalary / 100;
+	
+
+	
+	patientsPerEmployee = parseInt(variableStaffData[i][4]);
+	
+	console.log("patientsPerEmployee: " + patientsPerEmployee);
+	
+	//iterating over years
+	for (year=0; year<5; year++)
+	{
+	    
+	    employeesNeeded = Math.ceil(enrolledPatientsPerYear[year] / patientsPerEmployee);
+	    costPerStaffer = costPerEmployee * employeesNeeded;
+	    variableStaffCosts[year] += costPerStaffer;
+	    
+	    console.log("enrolledPatientsPerYear[year]: " + enrolledPatientsPerYear[year]);
+	    console.log("patientsPerEmployee: " + patientsPerEmployee);
+	    console.log("employeesNeeded: " + employeesNeeded);
+	    console.log("costPerStaffer: " + costPerStaffer);
+
+	    
+
+
+
+	}
+	
+
+    }
+
+
     
     
-    //variableStaffData costs
+    //totalStaffCosts
+
+    for (k=0; k<5; k++)
+    {
+	if (!fixedStaffCosts[k])
+	{
+	    fixedStaffCosts[k]=0;
+	}
+	if (!variableStaffCosts[k])
+	{
+	    variableStaffCosts[k]=0;
+	}
+	
+	totalStaffCosts[k] = fixedStaffCosts[k] + variableStaffCosts[k];
+    }
+
+    console.log(totalStaffCosts);
+
+
+
     
 }
