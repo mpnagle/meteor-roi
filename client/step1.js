@@ -1,15 +1,15 @@
 var summaryEmpty = true; //flag for enrollment summary state
 
 //global variables throughout the calculator
-//var totalPatientsPerYear = [0,0,0,0,0]; //array for total patients, year 1 - 5
-//var enrolledPatientsPerYear = [0,0,0,0,0]; //array for currently enrolled patients, year 1 - 5
-//var totalMonths = 0; //number for capturing # of months the program runs
+var totalPatientsPerYear = [0,0,0,0,0]; //array for total patients, year 1 - 5
+var enrolledPatientsPerYear = [0,0,0,0,0]; //array for currently enrolled patients, year 1 - 5
+var totalMonths = 0; //number for capturing # of months the program runs
 
 
 //for testing only -- sample initialization data
-var totalPatientsPerYear = [100,200,300,400,500];
-var enrolledPatientsPerYear = [50,100,150,200,250];
-var totalMonths = 6;
+//var totalPatientsPerYear = [100,200,300,400,500];
+//var enrolledPatientsPerYear = [50,100,150,200,250];
+//var totalMonths = 6;
 
 
 Template.Step_1.events({
@@ -31,10 +31,10 @@ function updateSummary(){
     totalPatientsPerYear[0] = initial;
 
     for (year=2; year<6; year+=1){
-//        $(newHtml).insertAfter(currCell);
+
         currCell = $('#enrollSummary tr:eq(1) td:eq(' + year +')');
-        console.log('curr cell html');
-        console.log($(currCell.html()));
+
+//        console.log($(currCell.html()));
         var numPatients = initial + ((target-initial)/4)*(year-1);
         currCell.html(Math.floor(numPatients));
 
@@ -62,7 +62,7 @@ function updateSummary(){
         currPatientTot = currPatientTotObject.text();
    }
 
-console.log(enrolledPatientsPerYear);    
+
 
 
 }
