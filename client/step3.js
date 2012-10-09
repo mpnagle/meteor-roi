@@ -9,10 +9,10 @@ var variableStaffData = [];
 var fixedStaffCosts = [0,0,0,0,0];
 var variableStaffCosts = [0,0,0,0,0];
 
-//var totalStaffCosts = [0,0,0,0,0];
+var totalStaffCosts = [0,0,0,0,0];
 
 //for debugging only
-var totalStaffCosts = [25000,25000,25000,25000,25000];
+//var totalStaffCosts = [25000,25000,25000,25000,25000];
 
 Template.Step_3.newRowStep3FixedStaffing = function() {
 

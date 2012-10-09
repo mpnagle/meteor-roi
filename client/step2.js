@@ -7,10 +7,10 @@ var patientsOnCellular = 0;
 
 var totalOneTimeCosts = [];
 var totalRecurCosts = [];
-//var totalTechCosts = [];
+var totalTechCosts = [0,0,0,0,0];
 
 //for debugging only -- should be initialized to empty.
-var totalTechCosts = [10000,10000,0,0,0];
+//var totalTechCosts = [10000,10000,0,0,0];
 
 Template.Step_2.newRowStep2OneTimeCosts = function() {
 
