@@ -101,8 +101,21 @@ Template.Step_2.events({
 Template.Step_2.InitializeStep2 = function(){
     Meteor.defer(
 	function(){
-	    Template.Step_2.newRowStep2OneTimeCosts();
-	    Template.Step_2.newRowStep2RecurCosts();
+	    
+	    if ((oneTimeData.length > 0) || (recurData.length > 0))
+	    {
+		Template.Step_2.loadDataStep2();
+	    }
+	    else
+	    {
+	    
+		Template.Step_2.newRowStep2OneTimeCosts();
+		Template.Step_2.newRowStep2RecurCosts();
+		
+	    }
+		
+
+
 	});
 }
 
@@ -117,7 +130,7 @@ Template.Step_2.getDataStep2 = function(){
 
 
 
-    for (i=0; i < numRowsOneTimeCosts; i++)
+    for (var i=0; i < numRowsOneTimeCosts; i++)
     {
 	currentRow = ["","","",""];
 	
@@ -130,8 +143,9 @@ Template.Step_2.getDataStep2 = function(){
 	oneTimeData.push(currentRow);
     }
 
+    console.log("oneTimeData is " + oneTimeData); 
 
-    for (j=0; j < numRowsRecurCosts; j++)
+    for (var j=0; j < numRowsRecurCosts; j++)
     {
 	currentRow = ["","",""];
 
@@ -320,3 +334,44 @@ Template.Step_2.calculateStep2 = function() {
     console.log(totalOneTimeCosts);
     console.log(totalTechCosts);
 }
+
+Template.Step_2.loadDataStep2 = function(){
+    
+    rowsInOneTime = oneTimeData.length;
+    
+    for (var i=0; i< rowsInOneTime; i++)
+    {
+	
+	
+	var currentRowToLoad = oneTimeData[i];
+
+	Template.Step_2.newRowStep2OneTimeCosts();
+	
+	$('#techOneType' + i).val(currentRowToLoad[0]);
+	$('#techOneCost' + i).val(currentRowToLoad[1]);
+	$('#techOneClass' + i).val(currentRowToLoad[2]);
+	$('#techOneTime' + i).val(currentRowToLoad[3]);
+	    
+    }
+
+
+    rowsInRecur = recurData.length;
+
+    for (j=0; j<rowsInRecur; j++)
+    {
+	Template.Step_2.newRowStep2RecurCosts();
+
+
+	var currentRowToLoad = recurData[j];
+
+	$('#techRecurType' + j).val(currentRowToLoad[0]);
+	$('#techRecurCost' + j).val(currentRowToLoad[1]);
+	$('#techRecurFreq' + j).val(currentRowToLoad[2]);
+
+
+    }
+
+    $('#percentCell').val(patientsOnCellular);
+
+}
+

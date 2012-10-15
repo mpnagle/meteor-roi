@@ -49,10 +49,25 @@ Template.Step_4.events({
     });
 
 Template.Step_4.InitializeStep4 = function(){
-    Meteor.defer(
-	function(){
-	    Template.Step_4.newRowMiscCosts();
-	});
+  
+    
+    console.log("miscData.length: " + miscData.length);
+  
+    if (miscData.length>0)
+    {
+
+	Meteor.defer(
+	    function(){
+		Template.Step_4.loadDataStep4();
+	    });
+    }
+    else
+    {
+	Meteor.defer(
+	    function(){
+		Template.Step_4.newRowMiscCosts();
+	    });
+    }
 }
 
 Template.Step_4.getDataStep4 = function() {
@@ -64,7 +79,7 @@ Template.Step_4.getDataStep4 = function() {
     
     for (i=0; i < numRowsMiscCosts; i++)
     {
-	currentRow = ["","",""]
+	currentRow = ["","",""];
 	
 	currentRow[0] = $('#miscType' + i).val();
 	currentRow[1] = $('#miscCost' + i).val();
@@ -77,6 +92,30 @@ Template.Step_4.getDataStep4 = function() {
 
 
 }
+
+Template.Step_4.loadDataStep4 = function() {
+
+    rowsInData = miscData.length;
+    
+
+    for (i=0; i< rowsInData; i++)
+    {
+	currentRowToLoad = miscData[i];
+	
+	console.log("In row i of loadDataStep4 for i = " + i);
+	Template.Step_4.newRowMiscCosts();
+	
+	$('#miscType' + i).val(currentRowToLoad[0]);
+	$('#miscCost' + i).val(currentRowToLoad[1]);
+	$('#miscFreq' + i).val(currentRowToLoad[2]);
+
+
+    }
+    
+
+}
+
+
 
 Template.Step_4.calculateStep4 = function() {
 

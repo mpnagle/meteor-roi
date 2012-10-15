@@ -38,7 +38,7 @@ $('#outcomesCost').append(outcomesCost);
 var outcomesRisk = $('<select id=outcomesRisk' + rowIndexOutcomes + '></select>');
 outcomesRisk.append('<option value="hospital">Hospital</option>');
 outcomesRisk.append('<option value="provider">Provider Group</option>');
-outcomesRisk.append('<option value="payer">Payer/option>');
+outcomesRisk.append('<option value="payer">Payer</option>');
 outcomesRisk.append('<option value="home_care_agency">Home Care Agency</option>');
 outcomesRisk.append('<option value="other">Other</option>');
 $('#outcomesRisk').append(outcomesRisk);
@@ -59,7 +59,16 @@ Template.Step_5.events({
 Template.Step_5.InitializeStep5 = function(){
     Meteor.defer(
 	function(){
-	    Template.Step_5.addRowOutcomes();
+
+	    if (outcomesData.length > 0)
+	    {
+		Template.Step_5.loadDataStep5();
+	    }
+	    else
+	    {
+		Template.Step_5.addRowOutcomes();
+	   
+	    }
 	});
 }
 
@@ -68,27 +77,29 @@ Template.Step_5.getDataStep5 = function(){
     
     outcomesData =[];
 
-    currentRow =[];
+    var currentRow =[];
     
     console.log("rowIndexOutcomes: " + rowIndexOutcomes);
     numRowsOutcomes = rowIndexOutcomes + 1;
 
-    for (i=0; i<numRowsOutcomes; i++)
+    for (var i=0; i<numRowsOutcomes; i++)
     {
+	currentRow = ["","","",""];
+	
 	currentRow[0] = $('#outcomesChange' + i).val();
 	currentRow[1] = $('#outcomesType' + i).val();
 	currentRow[2] = $('#outcomesAmount' + i).val();
 	currentRow[3] = $('#outcomesCost' + i).val();
 	currentRow[4] = $('#outcomesRisk' + i).val();
     
-	console.log("CurrentRow: " + currentRow);
+	console.log("currentRow: " + currentRow);
 
 	outcomesData.push(currentRow);
 
 
     }
 	
-
+    console.log(outcomesData);
     
 }
 
@@ -155,4 +166,28 @@ Template.Step_5.calculateStep5 = function()
 	console.log(totalOutcomes);
 
     }
+}
+
+
+Template.Step_5.loadDataStep5 = function(){
+ 
+    var rowsInOutcomes = outcomesData.length;
+
+    for (var j=0; j<rowsInOutcomes; j++)
+    {
+	var currentRowToLoad = outcomesData[j];
+
+	console.log("currentRowToLoad is " + currentRowToLoad +
+ "for j is " + j);
+	
+	Template.Step_5.addRowOutcomes();
+	
+	$('#outcomesChange' + j).val(currentRowToLoad[0]);
+	$('#outcomesType' + j).val(currentRowToLoad[1]);
+	$('#outcomesAmount' + j).val(currentRowToLoad[2]);
+	$('#outcomesCost' + j).val(currentRowToLoad[3]);
+	$('#outcomesRisk' + j).val(currentRowToLoad[4]);
+    }
+   
+
 }

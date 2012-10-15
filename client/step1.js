@@ -6,6 +6,11 @@ var enrolledPatientsPerYear = [0,0,0,0,0]; //array for currently enrolled patien
 var totalMonths = 0; //number for capturing # of months the program runs
 
 
+//initial data inputs
+var initial = 0;
+var target = 0;
+
+
 //for testing only -- sample initialization data
 //var totalPatientsPerYear = [100,200,300,400,500];
 //var enrolledPatientsPerYear = [50,100,150,200,250];
@@ -19,10 +24,35 @@ Template.Step_1.events({
 });
 
 
+Template.Step_1.initializeStep1 = function() {
+    Meteor.defer(
+	function(){
+	    Template.Step_1.loadDataStep1();
+	});
+	
+	
+
+    }
+
+
+Template.Step_1.loadDataStep1 = function() {
+    
+    console.log("in loadDataStep1");
+
+    console.log("initial is " + initial);
+
+    $('#initialEnroll').val(initial);
+    $('#year5Enroll').val(target);
+    $('#monthsEnroll').val(totalMonths);
+
+}
+
+
+
 function updateSummary(){
     //Total Patient Enrollment Row
-    var initial = parseInt($('#initialEnroll').val());
-    var target = parseInt($('#year5Enroll').val());
+    initial = parseInt($('#initialEnroll').val());
+    target = parseInt($('#year5Enroll').val());
     
     var newHtml = '<td>' + initial + '</td>';
     currCell = $('#enrollSummary tr:eq(1) td:eq(1)');
@@ -47,7 +77,7 @@ function updateSummary(){
 
     //Concurrent Patient Enrollment Row
 
-    var totalMonths = parseInt($('#monthsEnroll').val());
+    totalMonths = parseInt($('#monthsEnroll').val());
     var currPatientTot = $('#enrollSummary tr:eq(1) td:eq(1)').text();
 
     for (year=1; year<6; year+=1){
