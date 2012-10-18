@@ -53,27 +53,21 @@ body {
     cursor: pointer;
     display: inline;
     float: left;
-    margin-left: 20px;
     margin-top:20px;
-    margin-right: 50px;
     height: 100%;
+    width: 25%;
 }
 
 
 #right {
-
-
     margin-top:20px;
     height: 100%;
-    width: 79%;
+    width: 75%;
     display: inline;
-/*    float: right; */
-
+    float: right; 
 }
 
 #main {
-
-    overflow-x: auto;
     margin-right: auto;
 }
 
