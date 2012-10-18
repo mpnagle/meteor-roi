@@ -64,13 +64,9 @@ body {
 #right {
     margin-top:20px;
     height: 100%;
-}
-
-#main {
-
-    width: 75%;
-    display: inline;
-    float: right; 
+    width:75%;
+    display:inline;
+    float:right;
 }
 
 #main {
