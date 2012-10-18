@@ -67,6 +67,7 @@ body {
     width:75%;
     display:inline;
     float:right;
+    background-color: #efefef;
 }
 
 #main {
@@ -85,10 +86,16 @@ body {
 
 .instructions {
     
-    height:50px;
-    width:500px;
-    overflow:scroll;
     
+    width:500px;
+
+    padding: 10px 0px 0px 20px;
+    margin-bottom: 20px;
+    
+}
+
+.instructionsHeading{
+    font-size: 18pt;
 }
 
 .loremIpsem {
