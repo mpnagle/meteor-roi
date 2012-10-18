@@ -74,7 +74,16 @@ body {
 
 }
 
-.introduction {
+
+.instructionsHeading {
+    
+    text-align:center;
+
+
+}
+
+
+.instructions {
     
     height:50px;
     width:500px;

@@ -1,11 +1,12 @@
 <template name="Step_3">
   {{#if show}}
 
-  {{> LoremIpsem}}
 
   {{InitializeStep3}}
 
-   <div class="enrollment_form">
+  {{> InstructionsStep3}}
+
+  <div class="enrollment_form">
 
 
 
@@ -78,3 +79,11 @@ Fixed Staffing Elements
    {{/if}}
 </template>
 
+<template name="InstructionsStep3">
+  <div class="instructions">
+    Consider how your staffing requirements may be different than what it is now, especially at an early stage of research compared to an operational stage of service. 
+
+Enter staffing resources that will change with the number of patients.
+
+  </div>
+</template>
