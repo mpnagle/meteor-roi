@@ -5,7 +5,7 @@
 
 
   <div class="intro_text" id="Step 2">
-    <span id="step_2">Step 2 - Instructions ... LoremIpsem </span>
+    <span id="step_2">Step 2 - Instructions {{> InstructionsStep2}}</span>
   </div>
 
   <div class="enrollment_form" id = "form_2">
@@ -79,16 +79,13 @@
 
   <button id="calculateStep2">Calculate</button>
 </div>
-
-
-
-
-
-
-
   {{/if}}
+</template>
 
 
+<template name="InstructionsStep2">
+  <div class="instructions">
+    For this step, estimate investments in health information technology, both one-time and recurring, required to develop and administer the RPM intervention.
 
-
+  </div>
 </template>
