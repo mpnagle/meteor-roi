@@ -56,16 +56,25 @@ body {
     margin-left: 20px;
     margin-top:20px;
     margin-right: 50px;
-    height: 1000px;
+    height: 100%;
 }
 
 
 #right {
 
-    display:relative;
-    margin-top:20px;
-    /*display: inline;*/
 
+    margin-top:20px;
+    height: 100%;
+    width: 79%;
+    display: inline;
+/*    float: right; */
+
+}
+
+#main {
+
+    overflow-x: auto;
+    margin-right: auto;
 }
 
 .loremIpsem {
