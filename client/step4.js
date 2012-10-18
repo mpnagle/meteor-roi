@@ -85,12 +85,8 @@ Template.Step_4.getDataStep4 = function() {
 	currentRow[1] = $('#miscCost' + i).val();
 	currentRow[2] = $('#miscFreq' + i).val();
 
-	miscData.push(currentRow);
-    
-
+	miscData.push(currentRow);    
     }
-
-
 }
 
 Template.Step_4.loadDataStep4 = function() {
@@ -100,9 +96,9 @@ Template.Step_4.loadDataStep4 = function() {
 
     for (i=0; i< rowsInData; i++)
     {
-	currentRowToLoad = miscData[i];
+	var currentRowToLoad = miscData[i];
 	
-	console.log("In row i of loadDataStep4 for i = " + i);
+
 	Template.Step_4.newRowMiscCosts();
 	
 	$('#miscType' + i).val(currentRowToLoad[0]);
@@ -175,16 +171,12 @@ Template.Step_4.calculateStep4 = function() {
 	}
 
 
-
 	for (k=0; k<5; k++)
 	{
 	    totalMiscCosts[k] += currentCostArray[k];
 	}
-	
-
     }
-
-
-
-
 }
+
+
+
