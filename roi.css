@@ -53,9 +53,11 @@ body {
     cursor: pointer;
     display: inline;
     float: left;
+
     margin-left: 20px;
     margin-top:20px;
     margin-right: 50px;
+    width:20%;
     height: 100%;
 }
 
@@ -65,16 +67,17 @@ body {
 
     margin-top:20px;
     height: 100%;
-    width: 79%;
+/*    width: 75%; */
     display: inline;
+    margin-left:25%;
 /*    float: right; */
 
 }
 
 #main {
 
-    overflow-x: auto;
-    margin-right: auto;
+/*    overflow-x: auto; */
+/*    margin-right: auto; */
 }
 
 .loremIpsem {
