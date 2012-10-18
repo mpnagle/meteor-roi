@@ -74,6 +74,14 @@ body {
 
 }
 
+.introduction {
+    
+    height:50px;
+    width:500px;
+    overflow:scroll;
+    
+}
+
 .loremIpsem {
  
 /*    background-color:#800080*/
