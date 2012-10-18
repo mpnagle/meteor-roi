@@ -44,7 +44,9 @@ body {
 }
 
 .tab.selected {
-    background-color:yellow;
+    
+    color: #0788B1;
+
 }
 
 
