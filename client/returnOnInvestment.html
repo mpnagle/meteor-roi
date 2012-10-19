@@ -3,7 +3,11 @@
   {{#if show}}
 
   <div id="introduction">
-    {{> LoremIpsem}}
+    
+    
+    {{> instructionsROI}}
+    
+
   </div>
   
   {{InitializeROI}}
@@ -59,4 +63,18 @@
 
 {{/if}}
 
+</template>
+
+
+<template name="instructionsROI">
+  <div class="instructions">
+    
+The ROI Evaluation compares the financial gains to financial costs and has been calculated as follows:
+
+ROI = (Outcomes - Program Cost) / Program Cost
+
+An ROI greater than 1 means that your RPM intervention will generate more savings costs. An ROI less than 0 means your RPM intervention will not generate any positive savings.
+
+
+  </div>
 </template>
