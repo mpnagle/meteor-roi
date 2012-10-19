@@ -46,7 +46,7 @@ body {
 .tab.selected {
     
     color: #0788B1;
-
+    background-color:#efefef;
 }
 
 
@@ -69,7 +69,8 @@ body {
     width:75%;
     display:inline;
     float:right;
-    background-color: #efefef;
+    /*    background-color: #efefef; */
+    background-color: #f6f6f6;
 }
 
 #main {
@@ -80,9 +81,9 @@ body {
 
 .instructionsHeading {
     
-    text-align:center;
-
-
+    text-align: center;
+    font-size: 18pt;
+    margin-bottom:20px;
 }
 
 
@@ -94,10 +95,6 @@ body {
     padding: 10px 0px 0px 20px;
     margin-bottom: 20px;
     
-}
-
-.instructionsHeading{
-    font-size: 18pt;
 }
 
 .loremIpsem {
@@ -147,3 +144,7 @@ button {
    border-radius:10px;
    border-shadow:0px;
 }
+
+
+
+/* begin css for tables */
