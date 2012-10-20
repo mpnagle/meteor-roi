@@ -16,28 +16,36 @@ Template.Step_2.newRowStep2OneTimeCosts = function() {
 
     techOneTypeChildren = $('#techOneType').children();
     rowIndexOneTimeCosts = techOneTypeChildren.length;
-
     var typeTech = $('<select id=techOneType' + rowIndexOneTimeCosts + '></select>');
     typeTech.append('<option value="med"">Medical Devices (Purchased)</option>');
     typeTech.append('<option value="infra">Infrastructure</option>');
-    $("#techOneType").append(typeTech);
 
-    console.log($("#techOneType"));
 
     var cost = $("<input id=techOneCost" + rowIndexOneTimeCosts + ">", {
         type: 'text'
     });
-    $('#techOneCost').append(cost);
 
+    
     var classTech = $('<select id=techOneClass' + rowIndexOneTimeCosts + '></select>');
     classTech.append('<option value="shelf">-</option>');
     classTech.append('<option value="amortize">-</option>');
-    $('#techOneClass').append(classTech);
+
 
     var techTime = $("<input id=techOneTime" + rowIndexOneTimeCosts + ">", {
         type: 'text'
     });
-    $('#techOneTime').append(techTime);
+
+
+    //row with 4 columns
+    var newRow = $('<tr><td></td><td></td><td></td><td></td></tr>');
+    newRow.appendTo($('#one_time_costs'));
+    
+    var values = [typeTech, cost, classTech, techTime];
+    $('#one_time_costs tr:last').children().each(function(i) {
+        var valueItem = values[i];
+        $(this).append(valueItem);
+    });
+
 }
 
 

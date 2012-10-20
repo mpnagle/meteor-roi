@@ -108,8 +108,10 @@ body {
 }
 
 .enrollment_form{ 
-    display:inline;
-    }
+    color: red;
+ 
+
+}
 
 
 
