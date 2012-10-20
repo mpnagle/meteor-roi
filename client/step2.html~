@@ -1,23 +1,32 @@
 <template name="Step_2">
   {{#if show}}
 
+{{InitializeStep2}}
 
 
+  <div class="instructions" id="Step 2">
+    <div id="step_2" class="instructionsHeading">Step 2 - Technology </div>{{> InstructionsStep2}}</span>
+  </div>
 
-  <div class="intro_text" id="Step 2">
-    <span id="step_2">Step 2 - Instructions ... LoremIpsem </span>
-  
   <div class="enrollment_form" id = "form_2">
     <b>One-time Technology Costs:</b>
     <table id="one_time_costs">
+<<<<<<< HEAD
       <tr>
+    <th>Type</th>
+    <th>Cost</th>
+    <th>Classification</th>
+    <th>Time</th>
+=======
+      <tr id="label_row">
     <td>Type</td>
     <td>Cost</td>
     <td>Classification</td>
     <td>Time</td>
+>>>>>>> 6d63eca943f252f3a7904a8241c5b15b8c657077
       </tr>
+      <!-- 
       <tr> 
-    
     <td> 
         <div id="techOneType">
         </div>
@@ -35,6 +44,7 @@
         </div>
     </td>
       </tr>
+ -->
     </table>
 
 
@@ -43,11 +53,19 @@
     
     <b>Recurring Technology Costs:</b>
     <table id="recurring_costs">
+<<<<<<< HEAD
       <tr>
+    <th>Type</th>
+    <th>Cost</th>
+    <th>Frequency Billed</th>
+=======
+      <tr id="label_row">
     <td>Type</td>
     <td>Cost</td>
     <td>Frequency Billed</td>
+>>>>>>> 6d63eca943f252f3a7904a8241c5b15b8c657077
       </tr>
+      <!-- 
       <tr>
     <td>
         <div id="techRecurType">
@@ -62,27 +80,28 @@
         </div>
     </td>
       </tr>
+ -->
     </table>
     <div id="techRecurCellular">
       <b>% patients on cellular</b>
       <input id="percentCell" type="text">
     </div>
 
-<a id = "calculateStep2" href='#'>calculate</a>
+
     
       <button id="addRowRecurringTech">Add</button>
     
     <ul id='calculation3'></ul>
-            </div>   
-
-
-    <button>Submit</button>
-  </div>
-
-
-</div>
-
-
+  </div>   
   
+
+  <button id="calculateStep2">Calculate</button>
+</div>
   {{/if}}
+</template>
+
+
+<template name="InstructionsStep2">
+    For this step, estimate investments in health information technology, both one-time and recurring, required to develop and administer the RPM intervention.
+
 </template>

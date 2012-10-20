@@ -69,8 +69,7 @@ body {
     width:75%;
     display:inline;
     float:right;
-    /*    background-color: #efefef; */
-    background-color: #f6f6f6;
+
 }
 
 #main {
@@ -108,10 +107,28 @@ body {
 }
 
 .enrollment_form{ 
-    color: black;
- 
 
+    color: black;
+     text-align: center;
+    display: table;
+    padding: 10px;
+    table-layout: fixed;
 }
+
+
+#label_row{
+    background-color: #c9c9c5;
+}
+
+
+.enrollment_form tr:nth-of-type(odd){
+    background-color: #eeeeee;
+}
+
+.enrollment_form tr:nth-of-type(even){
+    background-color: #f6f6f6;
+}
+
 
 
 
