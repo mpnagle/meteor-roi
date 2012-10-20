@@ -14,8 +14,14 @@ var totalTechCosts = [0,0,0,0,0];
 
 Template.Step_2.newRowStep2OneTimeCosts = function() {
 
-    techOneTypeChildren = $('#techOneType').children();
-    rowIndexOneTimeCosts = techOneTypeChildren.length;
+//    techOneTypeChildren = $('#one_time_costs').children();
+//    console.log("techOneTypeChildren: " + techOneTypeChildren);
+
+var techOneRows = document.getElementById('one_time_costs').getElementsByTagName('tr');
+    rowIndexOneTimeCosts = techOneRows.length - 1;
+  
+console.log("techOneRows.length: " + techOneRows.length);
+
     var typeTech = $('<select id=techOneType' + rowIndexOneTimeCosts + '></select>');
     typeTech.append('<option value="med"">Medical Devices (Purchased)</option>');
     typeTech.append('<option value="infra">Infrastructure</option>');
