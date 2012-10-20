@@ -108,7 +108,10 @@ body {
 }
 
 .enrollment_form{ 
-
+    text-align: center;
+    display: table;
+    padding: 10px;
+    table-layout: fixed;
 }
 
 
