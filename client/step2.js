@@ -20,7 +20,6 @@ Template.Step_2.newRowStep2OneTimeCosts = function() {
     typeTech.append('<option value="med"">Medical Devices (Purchased)</option>');
     typeTech.append('<option value="infra">Infrastructure</option>');
 
-
     var cost = $("<input id=techOneCost" + rowIndexOneTimeCosts + ">", {
         type: 'text'
     });
@@ -64,12 +63,12 @@ Template.Step_2.newRowStep2RecurCosts = function() {
     typeTech.append('<option value="shipping">Shipping / Refurbishing</option>');
     typeTech.append('<option value="server">Server / Hosting</option>');
     typeTech.append('<option value="misc_tech">Misc. Tech Fees</option>');
-    $('#techRecurType').append(typeTech);
+//    $('#techRecurType').append(typeTech);
 
     var techCost = $("<input id=techRecurCost" + rowIndexRecurCosts +">", {
         type: 'text'
     });
-    $('#techRecurCost').append(techCost);
+//    $('#techRecurCost').append(techCost);
 
     var techFreq = $('<select id=techRecurFreq' + rowIndexRecurCosts + '></select>');
     techFreq.append('<option value="annual">Annual</option>');
@@ -77,7 +76,22 @@ Template.Step_2.newRowStep2RecurCosts = function() {
     techFreq.append('<option value="monthly_patient">Monthly/Patient</option>');
     techFreq.append('<option value="yearly_patient">Yearly/Patient</option>');
     techFreq.append('<option value="one_time_patient">One Time/Patient</option>');
-    $('#techRecurFreq').append(techFreq);
+//    $('#techRecurFreq').append(techFreq);
+
+
+    //row with 4 columns
+    var newRow = $('<tr><td></td><td></td><td></td><td></td></tr>');
+    newRow.appendTo($('#recurring_costs'));
+    
+    var values = [typeTech, techCost, techFreq];
+
+    $('#recurring_costs tr:last').children().each(function(i) {
+        var valueItem = values[i];
+        $(this).append(valueItem);
+    });
+
+
+
 }
 
 

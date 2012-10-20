@@ -108,10 +108,23 @@ body {
 }
 
 .enrollment_form{ 
-    color: red;
- 
 
 }
+
+
+#label_row{
+    background-color: red;
+}
+
+
+.enrollment_form tr:nth-of-type(odd){
+    background-color: white;
+}
+
+.enrollment_form tr:nth-of-type(even){
+    background-color: grey;
+}
+
 
 
 
