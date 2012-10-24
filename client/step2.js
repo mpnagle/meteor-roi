@@ -55,9 +55,14 @@ console.log("techOneRows.length: " + techOneRows.length);
 
 
 Template.Step_2.newRowStep2RecurCosts = function() {
+
+    var techRecurRows = document.getElementById('recurring_costs').getElementsByTagName('tr');
+    rowIndexRecurCosts = techRecurRows.length - 1;
+
+    console.log(rowIndexRecurCosts + " rowIndexRecurCosts");
     
-    techRecurTypeChildren = $('#techRecurType').children();
-    rowIndexRecurCosts = techRecurTypeChildren.length;
+//    techRecurTypeChildren = $('#techRecurType').children();
+//    rowIndexRecurCosts = techRecurTypeChildren.length;
 
 
 
@@ -86,7 +91,7 @@ Template.Step_2.newRowStep2RecurCosts = function() {
 
 
     //row with 4 columns
-    var newRow = $('<tr><td></td><td></td><td></td><td></td></tr>');
+    var newRow = $('<tr><td></td><td></td><td></td></tr>');
     newRow.appendTo($('#recurring_costs'));
     
     var values = [typeTech, techCost, techFreq];

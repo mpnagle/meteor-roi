@@ -19,14 +19,18 @@ Template.Step_3.newRowStep3FixedStaffing = function() {
   
    // incrementing what row number we're on when we make a new row, starting with 0.
 
-   staffFixedTypeChildren = $('#staffFixedType').children();
-   rowIndexFixedStaffing = staffFixedTypeChildren.length;
+//   staffFixedTypeChildren = $('#staffFixedType').children();
+//   rowIndexFixedStaffing = staffFixedTypeChildren.length;
+
+    var staffFixedTypeRows = document.getElementById('staffing_elements').getElementsByTagName('tr');
+    rowIndexFixedStaffing = staffFixedTypeRows.length - 1;
+
 
    var typeStaff = $('<select id=typeStaff' + rowIndexFixedStaffing + ' > </select>');
    typeStaff.append('<option value="management">Management</option>');
    typeStaff.append('<option value="support_staff">Support Staff</option>');
    typeStaff.append('<option value="other">Other</option>');
-  $("#staffFixedType").append(typeStaff);
+//  $("#staffFixedType").append(typeStaff);
     
 
 
@@ -34,7 +38,7 @@ Template.Step_3.newRowStep3FixedStaffing = function() {
         type: 'text'
     });
 
-    $('#staffFixedTitle').append(titleStaff);
+   // $('#staffFixedTitle').append(titleStaff);
 
     
    var percentStaff = $('<select id=percentStaff' + rowIndexFixedStaffing + ' > </select>');
@@ -43,13 +47,26 @@ Template.Step_3.newRowStep3FixedStaffing = function() {
    percentStaff.append('<option value="50">50</option>');
    percentStaff.append('<option value="25">25</option>');
    percentStaff.append('<option value="0">0</option>');
-   $('#staffFixedPercent').append(percentStaff);
+//   $('#staffFixedPercent').append(percentStaff);
  
    var salaryStaff = $("<input id=salaryStaff" + rowIndexFixedStaffing + ">", {
         type: 'text'
     });
 
-    $('#staffFixedSalary').append(salaryStaff); 
+//    $('#staffFixedSalary').append(salaryStaff); 
+
+
+    // 4 column row
+    var newRow = $('<tr><td></td><td></td><td></td><td></td></tr>');
+    newRow.appendTo($('#staffing_elements'));
+    
+
+    var values = [typeStaff, titleStaff, percentStaff, salaryStaff];
+    $('#staffing_elements tr:last').children().each(function(i) {
+        var valueItem = values[i];
+        $(this).append(valueItem);
+    });
+
 
 
 
@@ -62,6 +79,8 @@ Template.Step_3.newRowStep3VariableStaffing = function() {
   typeStaffVariableChildren = $('#staffVarType').children();
   rowIndexVarStaffing = typeStaffVariableChildren.length;
     
+var varStaffRows = document.getElementById('variable_staffing_elements').getElementsByTagName('tr');
+    rowIndexVarStaffing = varStaffRows.length - 1;
 
 
 
@@ -69,14 +88,14 @@ Template.Step_3.newRowStep3VariableStaffing = function() {
    typeStaffVariable.append('<option value="clinical">Clinical</option>');
    typeStaffVariable.append('<option value="support_staff">Support Staff</option>');
    typeStaffVariable.append('<option value="other">Other</option>');
-  $("#staffVarType").append(typeStaffVariable);
+//  $("#staffVarType").append(typeStaffVariable);
     
 
 
     var titleStaffVariable = $("<input id=titleStaffVariable" + rowIndexVarStaffing + ">", {
         type: 'text'
     });
-    $('#staffVarTitle').append(titleStaffVariable);
+ //   $('#staffVarTitle').append(titleStaffVariable);
 
     
 
@@ -86,7 +105,7 @@ Template.Step_3.newRowStep3VariableStaffing = function() {
    percentStaffVariable.append('<option value="50">50</option>');
    percentStaffVariable.append('<option value="25">25</option>');
    percentStaffVariable.append('<option value="0">0</option>');
-   $('#staffVarPercent').append(percentStaffVariable);
+   //$('#staffVarPercent').append(percentStaffVariable);
  
    var salaryStaffVariable = $("<input id=salaryStaffVariable" + rowIndexVarStaffing + ">", {
         type: 'text'
@@ -99,7 +118,20 @@ Template.Step_3.newRowStep3VariableStaffing = function() {
     });
 
 
-    $('#staffPatientLoad').append(staffPatientLoad); 
+ //   $('#staffPatientLoad').append(staffPatientLoad); 
+
+
+    //row with 5 columns
+    var newRow = $('<tr><td></td><td></td><td></td><td></td><td></td></tr>');
+    newRow.appendTo($('#variable_staffing_elements'));
+    
+    var values = [typeStaffVariable, titleStaffVariable, percentStaffVariable, salaryStaffVariable, staffPatientLoad];
+    $('#variable_staffing_elements tr:last').children().each(function(i) {
+        var valueItem = values[i];
+        $(this).append(valueItem);
+    });
+
+
 
 }
 
