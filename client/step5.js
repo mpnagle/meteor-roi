@@ -8,6 +8,9 @@ Template.Step_5.addRowOutcomes = function() {
 outcomesChangeChildren = $('#outcomesChange').children();
 rowIndexOutcomes = outcomesChangeChildren.length;
 
+    var outcomesRows = document.getElementById('outcomes').getElementsByTagName('tr');
+    rowIndexOutcomes = outcomesRows.length - 1;
+
 
 
 var outcomesChange = $('<select id=outcomesChange' + rowIndexOutcomes + '></select>');
@@ -16,24 +19,24 @@ outcomesChange.append('<option value="readmissions">30-day readmissions</option>
 outcomesChange.append('option value="office_visits">Office Visits</option>');
 outcomesChange.append('<option value="nursing_visits">Nursing Visits</option>');
 outcomesChange.append('<option value="other">Other</option>');
-$('#outcomesChange').append(outcomesChange);
+//$('#outcomesChange').append(outcomesChange);
 
 
 
 var outcomesType = $('<select id=outcomesType' + rowIndexOutcomes + '></select>');
 outcomesType.append('<option value="percent_change">% Change</option>');
 outcomesType.append('<option value="events_patient"># Events / Patient</option>');
-$('#outcomesType').append(outcomesType);
+//$('#outcomesType').append(outcomesType);
 
 var outcomesAmount =$("<input id=outcomesAmount" + rowIndexOutcomes + ">", {
     type: 'text'
 });
-$('#outcomesAmount').append(outcomesAmount);
+//$('#outcomesAmount').append(outcomesAmount);
 
 var outcomesCost = $("<input id=outcomesCost" + rowIndexOutcomes + ">", {
     type: 'text'
 });
-$('#outcomesCost').append(outcomesCost);
+//$('#outcomesCost').append(outcomesCost);
 
 var outcomesRisk = $('<select id=outcomesRisk' + rowIndexOutcomes + '></select>');
 outcomesRisk.append('<option value="hospital">Hospital</option>');
@@ -41,7 +44,17 @@ outcomesRisk.append('<option value="provider">Provider Group</option>');
 outcomesRisk.append('<option value="payer">Payer</option>');
 outcomesRisk.append('<option value="home_care_agency">Home Care Agency</option>');
 outcomesRisk.append('<option value="other">Other</option>');
-$('#outcomesRisk').append(outcomesRisk);
+//$('#outcomesRisk').append(outcomesRisk);
+
+    var newRow = $('<tr><td></td><td></td><td></td><td></td><td></td></tr>');
+    newRow.appendTo($('#outcomes'));
+    
+    var values = [outcomesChange, outcomesType, outcomesAmount, outcomesCost, outcomesRisk];
+    $('#outcomes tr:last').children().each(function(i) {
+        var valueItem = values[i];
+        $(this).append(valueItem);
+    });
+
 }
 
 Template.Step_5.events({

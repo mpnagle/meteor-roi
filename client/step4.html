@@ -12,15 +12,17 @@
   <div class="enrollment_form">
    
     
-    Miscellaneous Costs
-    <table id="recurring_costs">
+
+    <table id="misc_costs">
+      <caption>Miscellaneous Costs</caption>
+
       <tr>
-    <th>Type</th>
-    <th>Cost</th>
-    <th>Frequency Billed</th>
+	<th>Type</th>
+	<th>Cost</th>
+	<th>Frequency Billed</th>
       </tr>
      
-      <tr>
+<!--      <tr>
     <td>
         <div id="miscType">
             </div>
@@ -33,7 +35,7 @@
               <div id="miscFreq">
                   </div>
     </td>
-      </tr>
+      </tr> -->
     </table>
             <button id="addRowMisc">Add</button>
 	    <button id="calculate4">Calculate</button>
@@ -46,5 +48,8 @@
 </template>
 
 <template name="instructionsStep4">
-    Every RPM program is slightly different. Here is an area for you to enter other costs that your organization may incur for implementing your RPM intervention.
+
+  <div class="instructions">
+Every RPM program is slightly different. Here is an area for you to enter other costs that your organization may incur for implementing your RPM intervention.
+  </div>
 </template>

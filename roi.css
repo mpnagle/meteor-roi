@@ -162,6 +162,11 @@ button {
     -moz-border-radius: 2px 2px 2px 2px;
    border-radius:10px;
    border-shadow:0px;
+
+   text-transform:uppercase;
+
+
+
 }
 
 

@@ -4,19 +4,20 @@
 
   {{InitializeStep3}}
   <div class="instructions" id="Step 3">
-    <div id="step_3" class="instructionsHeading">Step 3 - Staffing </div> {{> InstructionsStep1}}
+    <div id="step_3" class="instructionsHeading">Step 3 - Staffing </div> {{> InstructionsStep3}}
   </div>
 
-  {{> InstructionsStep3}}
+
 
   <div class="enrollment_form">
 
 
 
 
-Fixed Staffing Elements
+
   
        <table id="staffing_elements">
+	 <caption>Fixed Staffing Elements</caption>
         <tr>
 	  <th>Position Type</th>
 	  <th>Position Title</th>
@@ -46,8 +47,9 @@ Fixed Staffing Elements
 
               <button id="addRowFixedStaff">Add</button>
 
-       <b>Variable Staffing Elements</b>
+
        <table id="variable_staffing_elements">
+	 <caption>Variable Staffing Elements</caption>
      <tr>
        <th>Position Type</th>
        <th>Position Title</th>
@@ -91,7 +93,10 @@ Fixed Staffing Elements
 </template>
 
 <template name="InstructionsStep3">
-    Consider how your staffing requirements may be different than what it is now, especially at an early stage of research compared to an operational stage of service. 
+  <div class="instructions">
+
+Consider how your staffing requirements may be different than what it is now, especially at an early stage of research compared to an operational stage of service. 
 
 Enter staffing resources that will change with the number of patients.
+  </div>
 </template>

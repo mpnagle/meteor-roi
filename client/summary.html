@@ -4,12 +4,13 @@
 
  {{InitializeSummary}}
 
-
-<div class="instructionsHeading">Instructions - Summary</div>
- {{> instructionsSummary}}
-
+<div class="instructions">
+  <div class="instructionsHeading">Summary</div>
+  {{> instructionsSummary}}
+</div>
 
  <table id = "totalSummary">
+   <caption>Cost Summary</caption>
    <tr>
      <th>Category</th>
      <th>Year 1</th>
@@ -94,9 +95,7 @@
 <template name="instructionsSummary">
   <div class="instructions">
     To help you understand the costs associated with your RPM intervention, this page provides you a quick way to see the total cost per patient per yet and patient enrollment based on your proposal.
-    
-
-  </div>
+   </div>
   
 
 </template>

@@ -2,12 +2,13 @@
 
   {{#if show}}
 
-  <div id="introduction">
-    
-    
-    {{> instructionsROI}}
     
 
+
+    <div class="instructions">
+      <div class="instructionsHeading">Returns On Investment</div>
+      {{> instructionsROI}}
+    </div>
   </div>
   
   {{InitializeROI}}
@@ -15,7 +16,7 @@
   
 <div>
   <table id="returnsTable">
-  
+    <caption>Returns On Investment</caption>
   
   
       <tr>
@@ -70,9 +71,9 @@
   <div class="instructions">
     
 The ROI Evaluation compares the financial gains to financial costs and has been calculated as follows:
-
+<p>
 ROI = (Outcomes - Program Cost) / Program Cost
-
+<p>
 An ROI greater than 1 means that your RPM intervention will generate more savings costs. An ROI less than 0 means your RPM intervention will not generate any positive savings.
 
 
