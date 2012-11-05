@@ -1,0 +1,24 @@
+<template name="Sensitivity">
+  {{#if show}}
+
+  {{initializeSensitivity}}
+  <div id = "sliders">
+    <div id="slider1">
+
+
+
+    <div id="slider2"></div>
+    <div id="slider3"></div>
+    <div id="slider4"></div>
+    <div id="slider5"></div>
+    
+    
+  <div>
+     Sensitivity Test
+     <div id="sensitivityResults">
+      <a title="testing"> Results go here</a>
+     </div>
+  </div>
+  {{/if}}
+
+</template>

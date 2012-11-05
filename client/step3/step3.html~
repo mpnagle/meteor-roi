@@ -1,0 +1,125 @@
+<template name="Step_3">
+  {{#if show}}
+
+  {{> LoremIpsem}}
+
+   <div class="enrollment_form">
+
+
+
+
+Fixed Staffing Elements
+  
+       <table id="staffing_elements">
+        <tr>
+    <td>Position Type</td>
+    <td>Position Title</td>
+    <td>Percent Effort</td>
+    <td>Salary</td>
+    </tr>
+    <tr>
+      <td>
+            <div id="staffFixedType"> </div>
+      </td>        
+          
+      <td>
+            <div id="staffFixedTitle"> </div>
+      </td>
+      
+      <td>
+        <div id="staffFixedPercent"></div>
+      </td>
+      <td>
+        <div id="staffFixedSalary"></div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <select id="positionType1">
+              <option value="managment">Management</option>
+              <option value="support_staff">Support Staff</option>
+              <option value="other">Other</option>
+        </select>
+      </td>
+      <td> 
+        <input id="positionTitle1" type="text" />
+      </td>
+      <td>
+        <select id="staffPercent1">
+              <option value="100">100</option>
+              <option value="75">75</option>
+              <option value="50">50</option>
+              <option value="25">25</option>
+              <option value="0">0</option>
+        </select>
+      </td>
+      <td>
+        <input id="staffSalary1" type="text" />
+      </td>
+    </tr>
+       </table>
+       <b>Variable Staffing Elements</b>
+       <table id="variable_staffing_elements">
+     <tr>
+       <td>Position Type</td>
+       <td>Position Title</td>
+       <td>Percent Effort</td>
+       <td>Salary</td>
+       <td>Patient Load / FTE </td>
+     </tr>
+      <tr>
+    <td>
+      <div id="staffVarType"></div>
+    </td>
+    <td>
+      <div id="staffVarTitle"></div>
+    </td>
+    <td>
+      <div id="staffVarPercent"></div>
+    </td>
+    <td>
+      <div id="staffVarSalary"></div>
+    </td>
+    <td>
+      <div id="staffPatientLoad"></div>
+    </td>
+      </tr>
+              <button id="addRowFixedStaff">Add</button>
+
+  <tr>
+    <td>
+      <select id ="variableStaffType1">
+        <option value="clinical">Clinical</option>
+        <option value="support_staff">Support Staff</option>
+        <option value="other">Other</option>
+      </select>
+      </td>
+    <td>
+      <input id="variableStaffTitle1" type="text" />
+    </td>
+    <td>
+      <select id="variableStaffPercent1">            
+         <option id="100">100</option>
+         <option id="75">75</option>
+         <option id="50">50</option>
+         <option id="25">25</option>
+         <option id="Other">Other</option>
+        </select>
+     </td>
+    <td>
+      <input id="variableSalary1" type="text" />
+    </td>
+    <td>
+      <input id="variablePatientLoad1" type="text" />
+      </td>
+      </tr>
+       </table>
+
+        <button id="addRowVariableStaff">Add</button>
+<a id = "calculate4" href='#'>calculate</a>
+       <ul id ='result4' />
+       
+   </div>
+   {{/if}}
+</template>
+

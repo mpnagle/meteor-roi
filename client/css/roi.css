@@ -1,0 +1,174 @@
+head{
+    visibility:hidden;
+}
+
+
+body {
+    font-family: 'Arial';
+    }
+
+
+#top {
+    font-family: 'Arial';
+    font-weight: bold;
+
+    text-align:left;
+    color: white;
+
+    float:top;
+
+    background-color:#005268;
+    
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    border-bottom-style: solid;
+    border-bottom-width: 5px;
+    border-color: black;
+
+}
+
+
+.tab {
+    color: #333333;
+
+    padding-top:5px;
+    padding-bottom:5px;
+    font-weight: bold;
+    
+    border-bottom-style: dashed;
+    border-bottom-width: 1px;
+
+
+}
+
+.tab.selected {
+    
+    color: #0788B1;
+    background-color:#efefef;
+}
+
+
+
+#left {
+    cursor: pointer;
+    display: inline;
+    float: left;
+
+    margin-top:20px;
+
+    height: 100%;
+    width: 220px;
+}
+
+
+#right {
+    margin-top:20px;
+    height: 100%;
+    width:75%;
+    display:inline;
+    float:right;
+
+}
+
+#main {
+    margin-right: auto;
+
+}
+
+
+.instructionsHeading {
+    
+    text-align: center;
+    font-size: 18pt;
+    margin-bottom:20px;
+}
+
+
+.instructions {
+    
+    
+    width:500px;
+
+    padding: 10px 0px 0px 20px;
+    margin-bottom: 20px;
+    
+}
+
+.loremIpsem {
+ 
+/*    background-color:#800080*/
+/*    background-color:Green; */
+    width: 75%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    
+}
+
+.enrollment_form{ 
+
+    color: black;
+     text-align: center;
+    display: table;
+    padding: 10px;
+    table-layout: fixed;
+}
+
+
+#label_row{
+    background-color: #c9c9c5;
+}
+
+
+.enrollment_form tr:nth-of-type(odd){
+    background-color: #eeeeee;
+}
+
+.enrollment_form tr:nth-of-type(even){
+    background-color: #f6f6f6;
+}
+
+
+
+
+
+/* buttons and forms */
+
+input {
+    
+/*    -webkit-border-radius:2px;
+    -moz-border-radius:2px; */
+    border-width: 3px 3px 3px 3px;
+/*    border-radius: 2px 2px 2px 2px; */
+    border-color: black;
+    
+}
+
+button {
+    
+    color:white;
+    background-color: grey;
+    height:30px;
+    width: 100px;
+
+    font-size: 12px;
+    font-weight: bold;
+
+  /*  border-width:5px 5px 5px 5px;*/
+   /* border-color: grey;*/
+    
+    -webkit-border-radius: 2px 2px 2px 2px;
+    -moz-border-radius: 2px 2px 2px 2px;
+   border-radius:10px;
+   border-shadow:0px;
+
+   text-transform:uppercase;
+
+
+
+}
+
+
+
+/* begin css for tables */

@@ -1,0 +1,58 @@
+Template.Sensitivity.initializeSensitivity = function(){
+    Meteor.defer(
+	function(){
+	    
+	    Template.Sensitivity.loadSliders();
+	    Template.Sensitivity.loadTooltips();
+
+	});
+}
+
+
+
+Template.Sensitivity.loadSliders = function(){
+    
+	
+	var slider1 = $('#slider1').slider({
+	    orientation: "horizontal",
+	    slide: Template.Sensitivity.sliderResults,
+	    change: Template.Sensitivity.sliderResults,
+	    min: -100,
+	    max: 100
+	});
+	var slider2 = $('#slider2').slider({
+
+	}
+
+);    
+	var slider3 = $('#slider3').slider();
+	var slider4 = $('#slider4').slider();
+	var slider5 = $('#slider5').slider();
+
+
+    
+	
+}
+
+Template.Sensitivity.sliderResults = function() {
+    var slider1 = $('#slider1').slider("value");
+    
+    $('#sensitivityResults').html(slider1);
+
+    console.log("in sliderResults");
+    return slider1;
+}
+
+
+Template.Sensitivity.loadTooltips = function() {
+    $('#sensitivityResults').tooltip({
+       content: "test"
+
+    });
+
+//    $('#sensitivityResults').html("test!");
+    console.log("in loadTooltips");
+
+
+
+}

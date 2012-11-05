@@ -1,0 +1,84 @@
+<template name="Sensitivity">
+  {{#if show}}
+
+  {{initializeSensitivity}}
+
+      <div class="instructionsHeading">Sensitivity Analysis</div>
+
+
+  <div id = "sliders">
+
+    <table>
+      <tr>
+	<th></th>
+	<th>Current Amount</th>
+	<th>Percent Change</th>
+	<th>New Amount</th>
+	<th>Slider</th>
+      </tr>
+      <tr>
+	<th>Patient Enrollment</th>
+	<td><div id="originalValue0"></div></td>
+	<td><div id="sliderValue0"></div></td>
+	<td><div id="newValue0"></div></td>
+	<td class="sliderColumn"><div id="slider0"></div></td>
+      </tr>
+      <tr>
+	<th>Technical Cost / Patient</th>
+	<td><div id="originalValue1"></td>
+	<td><div id="sliderValue1"></div></td>
+	<td><div id="newValue1"></div></td>
+	<td class="sliderColumn"><div id="slider1"></div></td>
+      </tr>
+      <tr>
+	<th>Staffing Cost / Patient</th>
+	<td><div id="originalValue2"></div></td>
+	<td><div id="sliderValue2"</div></td>
+	<td><div id="newValue2"></div></td>
+	<td class="sliderColumn"><div id="slider2"></div></td>
+      </tr>
+      <tr>
+	<th>Other Costs / Patient</th>
+	<td><div id="originalValue3"></div></td>
+	<td><div id="sliderValue3"></div></td>
+	<td><div id="newValue3"></div></td>
+	<td class="sliderColumn"><div id="slider3"></div></td>
+      </tr>
+      <tr>
+	<th>Return / Patient</th>
+	<td><div id="originalValue4"></div></td>
+	<td><div id="sliderValue4"</div></td>
+	<td><div id="newValue4"></div></td>
+	<td class="sliderColumn"><div id="slider4"></div></td>
+      </tr>
+
+
+    </table>
+    <p id = "patientSlider">
+      
+      <span class = "sliderText"> Patient Enrollment - 5 Year Goal </span>
+      
+      <p class="slider" id="slider1"></p>
+      
+    </p>
+
+
+    <p id="techCostSlider">
+      
+    <!--  Technical Cost / Patient -->
+      <div class="slider" id="slider2"></div>
+    </p>
+    <div class = "slider" id="slider3"></div>
+    <div class = "slider" id="slider4"></div>
+    <div class = "slider" id="slider5"></div>
+    
+    
+  <div>
+<!--     Sensitivity Test 
+     <div id="sensitivityResults">
+      <a title="testing"> Results go here</a>
+     </div> -->
+  </div>
+  {{/if}}
+
+</template>

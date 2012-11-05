@@ -1,0 +1,110 @@
+//results of screens 2 + 3 + 4
+var totalCosts = [];
+
+Template.Summary.InitializeSummary = function(){
+    Meteor.defer(
+	function(){
+	    
+	    Template.Summary.loadResults();
+	});
+}
+
+Template.Summary.loadResults = function() {
+
+    
+    //total technology cost summary lines (screen 2)
+   // currentCellSummary = $('#totalTechSummary tr:eq(0) td:eq(0)');
+   // currentCellSummary.html("Total Tech Costs");
+    
+    console.log($('#totalTechSummary'));
+
+    currentCellSummary = $('#totalTechSummary tr:eq(0) td:eq(0)');
+    currentCellSummary.html('Total Tech Costs');
+
+
+
+    currentCellSummary = $('#totalTechSummary tr:eq(1) td:eq(0)');
+    currentCellSummary.html('Tech Costs Per Patient');
+
+
+
+
+
+    for (i=0; i<5; i++)
+    {
+	costsCell = $('#totalTechSummary tr:eq(0) td:eq(' + (i+1) + ')');
+	costsCell.html(totalTechCosts[i]);
+	
+	costsCellperPatient = $('#totalTechSummary tr:eq(1) td:eq(' + (i+1) + ')');
+	staffCostsPerPatient = Math.ceil(totalTechCosts[i] / enrolledPatientsPerYear[i]);
+	costsCellperPatient.html(staffCostsPerPatient);
+
+	console.log("looping");
+    }
+
+
+    //totalStaffSummary section
+    currentCell = $('#taffSummary tr:eq(0) td:eq(0)');
+    currentCell.html("Total Staff Costs");
+    
+    currentCell = $('#totalStaffSummary tr:eq(1) td:eq(0)');
+    currentCell.html('Staff Costs Per Patient');
+
+    for (i=0; i<5; i++)
+    {
+	costsCell = $('#totalStaffSummary tr:eq(0) td:eq(' + (i+1) + ')');
+	costsCell.html(totalStaffCosts[i]);
+	
+	costsCellperPatient = $('#totalStaffSummary tr:eq(1) td:eq(' + (i+1) + ')');
+	techCostsPerPatient = Math.ceil(totalStaffCosts[i] / enrolledPatientsPerYear[i]);
+	costsCellperPatient.html(techCostsPerPatient);
+    }
+
+
+    //totalMiscCosts section
+    currentCell = $('#totalMiscSummary tr:eq(0) td:eq(0)');
+    currentCell.html("Total Miscellaneous Costs");
+    
+    currentCell = $('#totalMiscSummary tr:eq(1) td:eq(0)');
+    currentCell.html('Miscellaneous Costs Per Patient');
+
+    for (i=0; i<5; i++)
+    {
+	costsCell = $('#totalMiscSummary tr:eq(0) td:eq(' + (i+1) + ')');
+	costsCell.html(totalMiscCosts[i]);
+	
+	costsCellperPatient = $('#totalMiscSummary tr:eq(1) td:eq(' + (i+1) + ')');
+	miscCostsPerPatient = Math.ceil(totalMiscCosts[i] / enrolledPatientsPerYear[i]);
+	costsCellperPatient.html(miscCostsPerPatient);
+    }
+
+
+
+    //totalCosts section
+    currentCell = $('#totalCosts tr:eq(0) td:eq(0)');
+    currentCell.html("Total Costs");
+    
+    currentCell = $('#totalCosts tr:eq(1) td:eq(0)');
+    currentCell.html('Costs Per Patient');
+
+    for (i=0; i<5; i++)
+    {
+	totalCosts[i]= totalTechCosts[i] + totalStaffCosts[i] + totalMiscCosts[i];
+	console.log(totalCosts[i]);
+
+
+	costsCell = $('#totalCosts tr:eq(0) td:eq(' + (i+1) + ')');
+	costsCell.html(totalCosts[i]);
+	
+
+	costsCellperPatient = $('#totalCosts tr:eq(1) td:eq(' + (i+1) + ')');
+	CostsPerPatient = Math.ceil(totalCosts[i] / enrolledPatientsPerYear[i]);
+	costsCellperPatient.html(CostsPerPatient);
+    }
+
+
+
+
+
+}
+

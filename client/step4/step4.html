@@ -1,0 +1,55 @@
+<template name = "Step_4">
+  {{#if show}}
+
+  {{InitializeStep4}}
+
+  <div class="instructions" id="step 4">
+     <div id="step_4" class="instructionsHeading">Step 4 - Other</div> {{> instructionsStep4}}
+  </div>
+
+
+
+  <div class="enrollment_form">
+   
+    
+
+    <table id="misc_costs">
+      <caption>Miscellaneous Costs</caption>
+
+      <tr>
+	<th>Type</th>
+	<th>Cost</th>
+	<th>Frequency Billed</th>
+      </tr>
+     
+<!--      <tr>
+    <td>
+        <div id="miscType">
+            </div>
+    </td>
+    <td>
+        <div id="miscCost">
+        </div>
+          </td>
+          <td>
+              <div id="miscFreq">
+                  </div>
+    </td>
+      </tr> -->
+    </table>
+            <button id="addRowMisc">Add</button>
+	    <button id="calculate4">Calculate</button>
+
+
+
+  </div>
+
+{{/if}}
+</template>
+
+<template name="instructionsStep4">
+
+  <div class="instructions">
+Every RPM program is slightly different. Here is an area for you to enter other costs that your organization may incur for implementing your RPM intervention.
+  </div>
+</template>

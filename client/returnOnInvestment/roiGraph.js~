@@ -1,0 +1,14 @@
+var data = [1,2,3,4,5],
+w = 400,
+h = 200,
+margin = 20,
+y = d3.scale.linear().domain([0,d3.max(data)]).range([0+margin,h-margin]),
+x = d3.scale.linear().domain([0, data.length]).range(0+margin, w - margin);
+
+var graphDiv = d3.select("#returnsGraph")
+    .append("svg:svg")
+    .attr("width", w)
+    .attr("height", h);
+
+var graph = graphDiv.append("svg:graph")
+    .attr("transform", "translate(0,200)");
