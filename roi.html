@@ -1,9 +1,10 @@
 <head>
   <title>Center for Connected Health's Return on Investment Calculator</title>
 
-<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css"></link>
+<!-- <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css"></link> -->
 
-<script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+<!-- <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script> -->
+
 
 
 
@@ -20,10 +21,7 @@
 
     ROI CALCULATOR
 
-<!--    <div style="float:right">
-      login buttons here
-      {{loginButtons align="right"}}
-    </div> -->
+    <div style="float:right">      {{loginButtons align="right"}}    </div>
 
   </div>
 
@@ -40,7 +38,11 @@
   </div>
 
   <div id="right">
-
+    
+    {{#if currentUser}}
+    {{> loadUser}}
+    {{/if}}
+    
     {{> Step_0}}
     {{> Step_1}}
     {{> Step_2}}
@@ -49,6 +51,7 @@
     {{> Step_5}}
     {{> Summary}}
     {{> returnOnInvestment}}
+    {{> Sensitivity}}
     
   </div>
   
@@ -75,38 +78,11 @@
 </template>
 
 
-<template name ="Step_0">
-  {{#if show}}
-  <div id="introduction">
-    Introduction: 
-    
-    <span id= "block_1">
-Chronic disease is responsible for three-quarters of the United States’ healthcare spending, in large part because of a growing aging population. By 2030, the population aged 65 or older is projected to double by 2030 to 71 million. To prepare for the growing chronic disease burden, quality improvement programs are needed to more effectively manage the care of these high-risk, high-cost beneficiaries, reduce unnecessary utilization, and control for costs. To help health care organizations analyze the long-term sustainability and scalability of remote patient monitoring (RPM) programs, the Center for Technology and Aging and the Partners Healthcare Center for Connected Health developed the ROI Calculator for Congestive Heart Failure, a highly prevalent and costly chronic disease condition. Aggregate findings from this model will be used to identify the benefits of remote patient monitoring for patients, providers, and family caregivers; strategies for program deployment; lessons learned; and program outcomes, including program return on investment. 
+<template name="loadUser">
 
+{{loadUser}}
 
-</span><p>
-
-
-Before You Get Started
-
-
-    <span id= "block_2">
-To complete an ROI forecast, you will need to provide the following information: patient enrollment, timeframe/duration of initiative, and program costs and outcomes. Help buttons (?) are provided within the calculator to assist you in developing a forecast. For additional tips and best practices, a user’s guide is also available.
-</span><p>
-
-
-About the ROI:
-    <span id= "block_3">
-
-This calculator is meant to assist researchers in the preparation, implementation and evaluation of a remote patient monitoring program by examining the benefits to costs on a PPPY basis (per patient, per year). A detailed budget template is provided for pilot phase and year-by-year projections for five years. The template includes the following cost categories: patient enrollment, technology and operating costs, personnel or staffing costs, and other potential costs.
-
-
-</span><p>
-  </div>
-  {{/if}}
 </template>
-
-
   
 
 <template name="LoremIpsem">

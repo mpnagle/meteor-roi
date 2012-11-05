@@ -1,9 +1,13 @@
+//Meteor.subscribe("datasets");
+
 Sections = new Meteor.Collection("sections");
+
+//Meteor.subscribe("datasets");
 
 if (Meteor.isClient) {
 
   Template.leftSidebar.sections = function () {
-      return Sections.find({}, {sort: {name: 1}});
+      return Sections.find({});
   };
 
 
@@ -57,10 +61,58 @@ Template.tabs.selected = function () {
     Template.returnOnInvestment.show = function () {
 	return Session.equals ("which_screen", 7);
     };
-    
-}
+
+    Template.Sensitivity.show = function () {
+	return Session.equals ("which_screen", 8);
+	console.log("in sensitivity show");
+    };
+   
 
 
+    Template.loadUser.loadUser = function() {
+	
+//	 Session.set("loggedIn", false);
+	
+	Meteor.autorun(function(handle){
+	    if(Meteor.user() && Meteor.userLoaded()){
+//		if (!Session.get("loggedIn"))
+//		{
+		    
+		    console.log("in loadUser roi.js");
+		    
+		console.log("dataSets collection: ");
+		console.log(dataSets.find({}));
+
+		    var userData = dataSets.findOne({owner:Meteor.userId()});
+		    console.log("Meteor.userId() is ");
+		    console.log(Meteor.userId());
+		    
+		    console.log("userData is ");
+		    console.log(userData);
+		    if (userData)
+		    {
+			Meteor.call('loadUser', Meteor.userId());
+		    }
+		    else
+		    {
+			console.log("not running loadUser");
+		    }
+		
+		handle.stop();
+//		Session.set("loggedIn", true);
+//		}
+		    
+	    }
+		
+	});
+	
+	console.log("totalPatientsPerYear from loadUser: ");
+	console.log(totalPatientsPerYear);
+	
+	
+    }
+		       
+}		     
 
 
 
@@ -75,7 +127,8 @@ if (Meteor.isServer) {
 		   "Step 4 -- Other",
 		   "Step 5 -- Outcomes",
 		   "Summary",
-		   "Total Return On Investment"
+		   "Total Return On Investment",
+		   "Sensitivity Analysis"
 		  ]; 
       
       Sections.remove({});
@@ -91,3 +144,4 @@ if (Meteor.isServer) {
       
   });
 }
+
