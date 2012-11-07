@@ -21,7 +21,7 @@ Template.Sensitivity.loadSliders = function(){
 	    slide: Template.Sensitivity.sliderResults,
 	    change: Template.Sensitivity.sliderResults,
 	    min: 0,
-	    max: 100,
+	    max: 200,
 	    value: 100
 	});
 
@@ -37,6 +37,7 @@ Template.Sensitivity.sliderResults = function() {
     for (i=0; i<=4; i++)
     {
 	sliderValues[i] = $('#slider' + i).slider("value");
+	sliderValues[i] = sliderValues[i] - 100;
 	$('#sliderValue' + i).html(sliderValues[i]);
     }
     

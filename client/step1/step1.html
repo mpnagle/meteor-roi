@@ -10,7 +10,7 @@
   <div id="Form_1">
     <table>
       <tr>
-	<th>Initial Enrollment </th>
+	<th>Initial Enrollment <img src="http://www.windowsazure.com/css/images/calc-tooltip.jpg" alt="tooltip" id="tip1" title="test"/></th>
 	<td>
 	  <input id="initialEnroll" type="text" /> <p />
 	</td>
@@ -27,11 +27,15 @@
 	<input id="monthsEnroll" type="text" /> <p />
 	</td>
       </tr>
+
     </table>
-      
-    <button id = "calculateStep1">Calculate</button>
     
-    <button id = "saveDataTest">Save Data</button>
+    <div class="buttonDiv">
+      <button id = "calculateStep1">Submit</button>
+      
+      <button id = "saveDataTest">Save Data</button>
+
+    </div>
     
     <table id="enrollSummary">
       <caption>Enrollment Summary</caption>
@@ -68,7 +72,7 @@
 
 <template name="InstructionsStep1">
  
-  <div class="instructions">
+  <div>
 To begin calculating returns, users must define the target population for year 1 and project enrollment at year 5. Benchmark data suggest a typical mid-size hospital sees 500 congestive heart failure (CHF) hospitalizations per year while a small integrated healthcare network (IDN) provider sees 2,500 CHF hospitalizations per year. Five elements should be considered in determining initial enrollment and enrollment over a five-year period: prevalence of CHF, patient criteria, clinical criteria, patient refusal, and scalability. Note that 10-40% of patients could refuse to participate in the program. 
   </div>
 </template>

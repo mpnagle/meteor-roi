@@ -11,10 +11,13 @@ Meteor.methods({
 	    
 	console.log("this.userId: ");
 	console.log(this.userId);
-	    //if you can't find the user, insert
 	    
 
-//	    console.log("in saveUser");
+
+	//if you can't find the user, insert
+	    
+
+//	 console.log("in saveUser");
 	
 	if (!dataSets.findOne({owner:this.userId}))
 	{

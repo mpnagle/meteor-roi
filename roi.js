@@ -1,4 +1,40 @@
 //Meteor.subscribe("datasets");
+/*
+Meteor.autorun(function(handle){
+    if(Meteor.user() && Meteor.userLoaded()){
+	//		if (!Session.get("loggedIn"))
+	//		{
+		    
+	console.log("in loadUser roi.js");
+	
+	console.log("dataSets collection: ");
+	console.log(dataSets.find({}));
+	
+	var userData = dataSets.findOne({owner:this.userId});
+//	console.log("this.userId() is ");
+//	console.log(this.userId);
+	
+	console.log("userData is ");
+	console.log(userData);
+	if (userData)
+	{
+	    Meteor.call('loadUser', this.userId);
+	}
+	else
+	{
+	    console.log("not running loadUser");
+	}
+	
+	handle.stop();
+	//		Session.set("loggedIn", true);
+	//		}
+		    
+    }
+		
+});
+
+*/
+
 
 Sections = new Meteor.Collection("sections");
 
@@ -69,48 +105,7 @@ Template.tabs.selected = function () {
    
 
 
-    Template.loadUser.loadUser = function() {
-	
-//	 Session.set("loggedIn", false);
-	
-	Meteor.autorun(function(handle){
-	    if(Meteor.user() && Meteor.userLoaded()){
-//		if (!Session.get("loggedIn"))
-//		{
-		    
-		    console.log("in loadUser roi.js");
-		    
-		console.log("dataSets collection: ");
-		console.log(dataSets.find({}));
 
-		    var userData = dataSets.findOne({owner:Meteor.userId()});
-		    console.log("Meteor.userId() is ");
-		    console.log(Meteor.userId());
-		    
-		    console.log("userData is ");
-		    console.log(userData);
-		    if (userData)
-		    {
-			Meteor.call('loadUser', Meteor.userId());
-		    }
-		    else
-		    {
-			console.log("not running loadUser");
-		    }
-		
-		handle.stop();
-//		Session.set("loggedIn", true);
-//		}
-		    
-	    }
-		
-	});
-	
-	console.log("totalPatientsPerYear from loadUser: ");
-	console.log(totalPatientsPerYear);
-	
-	
-    }
 		       
 }		     
 

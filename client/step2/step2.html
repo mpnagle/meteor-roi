@@ -1,88 +1,59 @@
 <template name="Step_2">
   {{#if show}}
 
-{{InitializeStep2}}
+  {{InitializeStep2}}
 
-
-  <div class="instructions" id="Step 2">
-    <div id="step_2" class="instructionsHeading">Step 2 - Technology </div>{{> InstructionsStep2}}</span>
+  
+  <div id="Step 2" class="instructions">
+    <div id="step_2" class="instructionsHeading">Step 2 - Technology </div>{{> InstructionsStep2}}
   </div>
-
+  
   <div class="enrollment_form" id = "form_2">
-
-    <table id="one_time_costs">
-      <caption>One-time Technology Costs</caption>
-      <tr id="label_row">
-    <th>Type</th>
-    <th>Cost</th>
-    <th>Classification</th>
-    <th>Time</th>
-      </tr>
-      <!-- 
-      <tr> 
-    <td> 
-        <div id="techOneType">
-        </div>
-    </td>
-    <td>
-        <div id="techOneCost">
-        </div>
-    </td>
-    <td>
-        <div id="techOneClass">
-        </div>
-    </td>
-    <td>
-        <div id="techOneTime">
-        </div>
-    </td>
-      </tr>
- -->
-    </table>
-
-
-      
-   <button id="addRowOneTech">Add</button>
     
-
-    <table id="recurring_costs">
-      <caption>Recurring Technology Costs</caption>
-      <tr id="label_row">
-	<th>Type</th>
-	<th>Cost</th>
-	<th>Frequency Billed</th>
-      </tr>
-      <!-- 
-      <tr>
-    <td>
-        <div id="techRecurType">
-        </div>
-    </td>
-    <td>
-        <div id="techRecurCost">
-        </div>
-    </td>
-    <td>
-        <div id="techRecurFreq">
-        </div>
-    </td>
-      </tr>
- -->
+    <div>
+      <table id="one_time_costs">
+	<caption>One-time Technology Costs</caption>
+	<tr id="label_row">
+	  <th>Type</th>
+	  <th>Cost</th>
+	  <th>Classification</th>
+	  <th>Time</th>
+	</tr>
     </table>
-    <div id="techRecurCellular">
-      <b>% patients on cellular</b>
-      <input id="percentCell" type="text">
+
+      <div class="buttonDiv">
+	<button id="addRowOneTech">+Add</button>
+      </div>
     </div>
+    <div>
+      <table id="recurring_costs">
+	<caption>Recurring Technology Costs</caption>
+	<tr id="label_row">
+	  <th>Type</th>
+	  <th>Cost</th>
+	  <th>Frequency Billed</th>
+	</tr>
+      </table>
+<!--      <div id="techRecurCellular"> -->
+	<b>% patients on cellular</b>
+	<input id="percentCell" type="text">
+<!--      </div> -->
+      
+      
+      <div class="buttonDiv">
+	<button id="addRowRecurringTech">+Add</button>
+	
+	<button id="calculateStep2">Submit</button>
+      </div>
+	
+    </div>
+    <!--<ul id='calculation3'></ul> -->
 
 
-    
-      <button id="addRowRecurringTech">Add</button>
-    
-    <ul id='calculation3'></ul>
   </div>   
   
 
-  <button id="calculateStep2">Calculate</button>
+
 </div>
   {{/if}}
 </template>
@@ -90,7 +61,7 @@
 
 <template name="InstructionsStep2">
   
-  <div class="instructions">
+  <div>
 For this step, estimate investments in health information technology, both one-time and recurring, required to develop and administer the RPM intervention.
   </div>
 </template>

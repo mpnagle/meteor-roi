@@ -1,6 +1,8 @@
 table {
 text-align:left;
-padding:10px;
+padding-bottom:10px;
+position:relative;
+
 }
 
 th {
@@ -22,18 +24,20 @@ table tr:nth-child(odd){
 }
 
 th {
-padding:10px;
+padding:6px;
 }
 
 td {
-padding:10px;
+padding:6px;
 }
 
 caption {
+
 text-align:left;
-padding-top:10px;
+margin-top:40px;
+padding-top:0px;
 padding-bottom:10px;
-margin-left:10px;
+margin-left:0px;
 font-weight:bold;
 /*background-color: #b8b8b5;*/
 }

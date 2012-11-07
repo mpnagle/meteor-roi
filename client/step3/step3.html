@@ -15,7 +15,7 @@
 
 
 
-  
+    <div>  
        <table id="staffing_elements">
 	 <caption>Fixed Staffing Elements</caption>
         <tr>
@@ -25,65 +25,27 @@
 	  <th>Salary</th>
 	</tr>
 
-<!--
-    <tr>
-      <td>
-            <div id="staffFixedType"> </div>
-      </td>        
-          
-      <td>
-            <div id="staffFixedTitle"> </div>
-      </td>
-      
-      <td>
-        <div id="staffFixedPercent"></div>
-      </td>
-      <td>
-        <div id="staffFixedSalary"></div>
-      </td>
-    </tr>
-!-->
        </table>
-
-              <button id="addRowFixedStaff">Add</button>
-
+       <div class="buttonDiv">
+	 <button id="addRowFixedStaff">+Add</button>
+       </div>
+    </div>
 
        <table id="variable_staffing_elements">
 	 <caption>Variable Staffing Elements</caption>
-     <tr>
+	 <tr>
        <th>Position Type</th>
        <th>Position Title</th>
        <th>Percent Effort</th>
        <th>Salary</th>
        <th>Patient Load / FTE </th>
      </tr>
-  
-
-<!--    <tr>
-    <td>
-      <div id="staffVarType"></div>
-    </td>
-    <td>
-      <div id="staffVarTitle"></div>
-    </td>
-    <td>
-      <div id="staffVarPercent"></div>
-    </td>
-    <td>
-      <div id="staffVarSalary"></div>
-    </td>
-    <td>
-      <div id="staffPatientLoad"></div>
-    </td>
-      </tr> -->
-
-
        </table>
-
-       <button id="addRowVariableStaff">Add</button>
-       <button id = "calculate3">calculate</button>
-       <ul id ='result3' />
-
+<div class="buttonDiv">
+       <button id="addRowVariableStaff">+Add</button>
+       <button id = "calculate3">Submit</button>
+<!--       <ul id ='result3' /> -->
+</div>
        
     <!--   <button id="submitStep3">Submit</button> -->
 
@@ -93,7 +55,7 @@
 </template>
 
 <template name="InstructionsStep3">
-  <div class="instructions">
+  <div>
 
 Consider how your staffing requirements may be different than what it is now, especially at an early stage of research compared to an operational stage of service. 
 

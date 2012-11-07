@@ -5,6 +5,8 @@ head{
 
 body {
     font-family: 'Arial';
+
+    margin: auto; 
     }
 
 
@@ -15,10 +17,10 @@ body {
     text-align:left;
     color: white;
 
-    float:top;
+    float:top; 
 
     background-color:#005268;
-    
+
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -32,9 +34,8 @@ body {
 
 .tab {
     color: #333333;
-
-    padding-top:5px;
-    padding-bottom:5px;
+    padding-top:4px;
+    padding-bottom:4px;
     font-weight: bold;
     
     border-bottom-style: dashed;
@@ -57,7 +58,7 @@ body {
     float: left;
 
     margin-top:20px;
-
+    margin-left:5px;
     height: 100%;
     width: 220px;
 }
@@ -81,25 +82,32 @@ body {
 .instructionsHeading {
     
     text-align: center;
-    font-size: 18pt;
-    margin-bottom:20px;
+    font-size: 16pt;
+    font-weight: bold;
+    margin-bottom:5px; 
 }
 
 
 .instructions {
     
     
-    width:500px;
+    width:600px;
 
-    padding: 10px 0px 0px 20px;
-    margin-bottom: 20px;
+    padding: 5px;
+   /* padding: 5px 2px 2px 5px;*/
+    margin-bottom: 10px;
     
+    background-color: #eeeeee;
+}
+
+.introductionHeading{
+    
+    font-weight:bold;
 }
 
 .loremIpsem {
  
-/*    background-color:#800080*/
-/*    background-color:Green; */
+
     width: 75%;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -149,9 +157,11 @@ button {
     
     color:white;
     background-color: grey;
-    height:30px;
-    width: 100px;
-
+    height:25px;
+    width:100px;
+    
+/*    float:right; */
+    
     font-size: 12px;
     font-weight: bold;
 
@@ -160,7 +170,7 @@ button {
     
     -webkit-border-radius: 2px 2px 2px 2px;
     -moz-border-radius: 2px 2px 2px 2px;
-   border-radius:10px;
+   border-radius:6px;
    border-shadow:0px;
 
    text-transform:uppercase;
@@ -169,6 +179,10 @@ button {
 
 }
 
+.buttonDiv {
 
+position: absolute;
+
+}
 
 /* begin css for tables */
