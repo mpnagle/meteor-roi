@@ -20,7 +20,7 @@ var techOneRows = document.getElementById('one_time_costs').getElementsByTagName
   
 console.log("techOneRows.length: " + techOneRows.length);
 
-    var typeTech = $('<select id=techOneType' + rowIndexOneTimeCosts + '></select>');
+    var typeTech = $('<select class=selectTechOne id=techOneType' + rowIndexOneTimeCosts + '></select>');
     typeTech.append('<option value="med"">Medical Devices (Purchased)</option>');
     typeTech.append('<option value="infra">Infrastructure</option>');
 
