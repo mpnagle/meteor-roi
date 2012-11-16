@@ -17,12 +17,12 @@ Template.Step_4.newRowMiscCosts= function() {
     miscType.append('<option value="services">Services</option>');
     miscType.append('<option value="subscriptions">Subscriptions</option>');
     miscType.append('<option value="other">Other</option>');
-//  $('#miscType').append(miscType);
+
 
     var miscCost = $("<input id=miscCost" + rowIndexMiscCosts + ">", {
         type: 'text'
     });
-//    $('#miscCost').append(miscCost);
+
 
     var miscFreq = $('<select id=miscFreq' + rowIndexMiscCosts + '></select>');
     miscFreq.append('<option value="annual">Annual</option>');
@@ -30,7 +30,7 @@ Template.Step_4.newRowMiscCosts= function() {
     miscFreq.append('<option value="monthly_patient">Monthly/Patient</option>');
     miscFreq.append('<option value="yearly_patient">Yearly/Patient</option>');
     miscFreq.append('<option value="one_time_patient">One Time/Patient</option>');
-//    $('#miscFreq').append(miscFreq);
+
 
     var newRow = $('<tr><td></td><td></td><td></td></tr>');
     newRow.appendTo($('#misc_costs'));

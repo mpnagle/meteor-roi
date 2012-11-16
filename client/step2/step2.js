@@ -9,8 +9,7 @@ var totalOneTimeCosts = [];
 var totalRecurCosts = [];
 var totalTechCosts = [0,0,0,0,0];
 
-//for debugging only -- should be initialized to empty.
-//var totalTechCosts = [10000,10000,0,0,0];
+
 
 Template.Step_2.newRowStep2OneTimeCosts = function() {
 
@@ -59,9 +58,6 @@ Template.Step_2.newRowStep2RecurCosts = function() {
 
     console.log(rowIndexRecurCosts + " rowIndexRecurCosts");
     
-//    techRecurTypeChildren = $('#techRecurType').children();
-//    rowIndexRecurCosts = techRecurTypeChildren.length;
-
 
 
     var typeTech = $('<select id=techRecurType' + rowIndexRecurCosts + '></select>');
@@ -72,12 +68,12 @@ Template.Step_2.newRowStep2RecurCosts = function() {
     typeTech.append('<option value="shipping">Shipping / Refurbishing</option>');
     typeTech.append('<option value="server">Server / Hosting</option>');
     typeTech.append('<option value="misc_tech">Misc. Tech Fees</option>');
-//    $('#techRecurType').append(typeTech);
+
 
     var techCost = $("<input id=techRecurCost" + rowIndexRecurCosts +">", {
         type: 'text'
     });
-//    $('#techRecurCost').append(techCost);
+
 
     var techFreq = $('<select id=techRecurFreq' + rowIndexRecurCosts + '></select>');
     techFreq.append('<option value="annual">Annual</option>');
@@ -85,7 +81,7 @@ Template.Step_2.newRowStep2RecurCosts = function() {
     techFreq.append('<option value="monthly_patient">Monthly/Patient</option>');
     techFreq.append('<option value="yearly_patient">Yearly/Patient</option>');
     techFreq.append('<option value="one_time_patient">One Time/Patient</option>');
-//    $('#techRecurFreq').append(techFreq);
+
 
 
     //row with 3 columns
@@ -111,21 +107,37 @@ Template.Step_2.newRowStep2RecurCosts = function() {
 
 Template.Step_2.events({
     
-        'click #addRowOneTech': function(){
-	    Template.Step_2.newRowStep2OneTimeCosts();
-	},
-
-        'click #addRowRecurringTech': function(){
-	        Template.Step_2.newRowStep2RecurCosts();
-	},
-
-	'click #calculateStep2': function(){
-	    Template.Step_2.calculateStep2();
-	    
-	
-
-	}
+    'click #addRowOneTech': function(){
+	Template.Step_2.newRowStep2OneTimeCosts();
+    },
     
+    'click #addRowRecurringTech': function(){
+	Template.Step_2.newRowStep2RecurCosts();
+    },
+    
+    'click #calculateStep2': function(){
+	Template.Step_2.calculateStep2();
+    },
+    
+
+//This is an unfinished block of code used to create an event when the type on One-time Tech Costs changes
+// so that the classification column can be changed appropriately. 
+
+/*    'change .selectTechOne': function(event){
+
+	currentId = event.srcElement.id;
+	currentJQueryObject = $('#' + currentId);
+	currentVal = currentJQueryObject.val();
+	
+	console.log('testing change .selectTechOne');
+	console.log(event);
+	console.log(currentJQueryObject);
+	console.log(currentVal);
+
+	
+    }*/
+
+
 });
 
 
@@ -144,7 +156,6 @@ Template.Step_2.InitializeStep2 = function(){
 		Template.Step_2.newRowStep2RecurCosts();
 		
 	    }
-		
 
 
 	});
@@ -359,7 +370,8 @@ Template.Step_2.calculateStep2 = function() {
 	
 	totalTechCosts[l] += parseInt(totalOneTimeCosts[l]) + parseInt(totalRecurCosts[l]);
 
-	//console.log("l: " + l + " parseInt(totalOneTimeCosts[l]): " + parseInt(totalOneTimeCosts[l]) + " parseInt(totalRecurCosts[l]): " + parseInt(totalRecurCosts[l]));
+
+
     }
 
     console.log(totalOneTimeCosts);

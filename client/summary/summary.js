@@ -12,11 +12,6 @@ Template.Summary.InitializeSummary = function(){
 Template.Summary.loadResults = function() {
 
     
-    //total technology cost summary lines (screen 2)
-   // currentCellSummary = $('#totalTechSummary tr:eq(0) td:eq(0)');
-   // currentCellSummary.html("Total Tech Costs");
-    
-    console.log($('#totalSummary'));
 
     currentCellSummary = $('#totalSummary tr:eq(1) td:eq(0)');
     currentCellSummary.html('Total Tech Costs');
@@ -49,7 +44,7 @@ Template.Summary.loadResults = function() {
 	
 costsCellperPatient.html(staffCostsPerPatient);
 
-	console.log("looping");
+
     }
 
 

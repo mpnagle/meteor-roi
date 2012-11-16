@@ -3,7 +3,6 @@ Template.Sensitivity.initializeSensitivity = function(){
 	function(){
 	    
 	    Template.Sensitivity.loadSliders();
-	    Template.Sensitivity.loadTooltips();
 	    Template.Sensitivity.sliderResults();
 	});
 }
@@ -79,16 +78,3 @@ Template.Sensitivity.sliderResults = function() {
 
 }
 
-
-Template.Sensitivity.loadTooltips = function() {
-    $('#sensitivityResults').tooltip({
-       content: "test"
-
-    });
-
-//    $('#sensitivityResults').html("test!");
-    console.log("in loadTooltips");
-
-
-
-}

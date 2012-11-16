@@ -11,16 +11,12 @@ var variableStaffCosts = [0,0,0,0,0];
 
 var totalStaffCosts = [0,0,0,0,0];
 
-//for debugging only
-//var totalStaffCosts = [25000,25000,25000,25000,25000];
 
 Template.Step_3.newRowStep3FixedStaffing = function() {
 
   
    // incrementing what row number we're on when we make a new row, starting with 0.
 
-//   staffFixedTypeChildren = $('#staffFixedType').children();
-//   rowIndexFixedStaffing = staffFixedTypeChildren.length;
 
     var staffFixedTypeRows = document.getElementById('staffing_elements').getElementsByTagName('tr');
     rowIndexFixedStaffing = staffFixedTypeRows.length - 1;
@@ -30,7 +26,7 @@ Template.Step_3.newRowStep3FixedStaffing = function() {
    typeStaff.append('<option value="management">Management</option>');
    typeStaff.append('<option value="support_staff">Support Staff</option>');
    typeStaff.append('<option value="other">Other</option>');
-//  $("#staffFixedType").append(typeStaff);
+
     
 
 
@@ -38,7 +34,7 @@ Template.Step_3.newRowStep3FixedStaffing = function() {
         type: 'text'
     });
 
-   // $('#staffFixedTitle').append(titleStaff);
+
 
     
    var percentStaff = $('<select id=percentStaff' + rowIndexFixedStaffing + ' > </select>');
@@ -47,13 +43,13 @@ Template.Step_3.newRowStep3FixedStaffing = function() {
    percentStaff.append('<option value="50">50</option>');
    percentStaff.append('<option value="25">25</option>');
    percentStaff.append('<option value="0">0</option>');
-//   $('#staffFixedPercent').append(percentStaff);
+
  
    var salaryStaff = $("<input id=salaryStaff" + rowIndexFixedStaffing + ">", {
         type: 'text'
     });
 
-//    $('#staffFixedSalary').append(salaryStaff); 
+
 
 
     // 4 column row
@@ -88,14 +84,14 @@ var varStaffRows = document.getElementById('variable_staffing_elements').getElem
    typeStaffVariable.append('<option value="clinical">Clinical</option>');
    typeStaffVariable.append('<option value="support_staff">Support Staff</option>');
    typeStaffVariable.append('<option value="other">Other</option>');
-//  $("#staffVarType").append(typeStaffVariable);
+
     
 
 
     var titleStaffVariable = $("<input id=titleStaffVariable" + rowIndexVarStaffing + ">", {
         type: 'text'
     });
- //   $('#staffVarTitle').append(titleStaffVariable);
+
 
     
 
@@ -105,7 +101,7 @@ var varStaffRows = document.getElementById('variable_staffing_elements').getElem
    percentStaffVariable.append('<option value="50">50</option>');
    percentStaffVariable.append('<option value="25">25</option>');
    percentStaffVariable.append('<option value="0">0</option>');
-   //$('#staffVarPercent').append(percentStaffVariable);
+
  
    var salaryStaffVariable = $("<input id=salaryStaffVariable" + rowIndexVarStaffing + ">", {
         type: 'text'
@@ -118,7 +114,7 @@ var varStaffRows = document.getElementById('variable_staffing_elements').getElem
     });
 
 
- //   $('#staffPatientLoad').append(staffPatientLoad); 
+
 
 
     //row with 5 columns
@@ -161,7 +157,7 @@ Template.Step_3.events({
 
 Template.Step_3.InitializeStep3 = function(){
 
-    //setting number of Rows in each matrix to 0 to start.
+
     
 
 
@@ -213,7 +209,7 @@ Template.Step_3.getDataStep3 = function(){
 	
 	//adding currentRow to the fixedStaffData matrix
 	fixedStaffData.push(currentRow);
-	//console.log(fixedStaffData);
+
 	
     }
 
@@ -231,12 +227,12 @@ Template.Step_3.getDataStep3 = function(){
         currentRow[3] = $('#salaryStaffVariable' + i).val();
 	currentRow[4] = $('#staffPatientLoad' + i).val();
 
-//	console.log("First entry + " + currentRow[0] + " 2nd " + currentRow[1] + " 3rd " + currentRow[2] + " 4th " + currentRow[3]);
+
 
 	
 	//adding currentRow to the fixedStaffData matrix
 	variableStaffData.push(currentRow);
-	//console.log(variableStaffData);
+
 	
     }
 
@@ -256,10 +252,7 @@ Template.Step_3.calculateStep3 = function () {
     
     //iterating through fixedStaffData  
     for (i=0; i<fixedStaffData.length; i++)
-    {
-//	console.log("in cost loop --- " + i);
-//	console.log("fixedStaffData length" + fixedStaffData.length);
-	
+    {	
 	currentPercent = parseInt(fixedStaffData[i][2]);
 	currentSalary = parseInt(fixedStaffData[i][3]);
 	
@@ -285,6 +278,7 @@ Template.Step_3.calculateStep3 = function () {
     
 
     console.log("variableStaffData.length: " + variableStaffData.length);
+    
     //iterating over rows
     for (i=0; i<variableStaffData.length; i++)
     {
@@ -308,15 +302,6 @@ Template.Step_3.calculateStep3 = function () {
 	    costPerStaffer = costPerEmployee * employeesNeeded;
 	    variableStaffCosts[year] += costPerStaffer;
 	    
-	//    console.log("enrolledPatientsPerYear[year]: " + enrolledPatientsPerYear[year]);
-	//    console.log("patientsPerEmployee: " + patientsPerEmployee);
-	//    console.log("employeesNeeded: " + employeesNeeded);
-	//    console.log("costPerStaffer: " + costPerStaffer);
-
-	    
-
-
-
 	}
 	
 
@@ -341,7 +326,7 @@ Template.Step_3.calculateStep3 = function () {
 	totalStaffCosts[k] = fixedStaffCosts[k] + variableStaffCosts[k];
     }
 
-    console.log(totalStaffCosts);
+
 
 }
 
@@ -353,25 +338,18 @@ Template.Step_3.loadDataStep3 = function () {
 
     for (var i=0; i< rowsInFixedStaffData; i++)
     {
-	//console.log("in rowsInFixedStaffData and i is " + i);
-	//console.log("fixedStaffData.length is " + fixedStaffData.length);
-	
-	//console.log("fixedStaffData is " + fixedStaffData);
 
 	var currentRowToLoad = fixedStaffData[i];
 
-	//console.log("currentRowToLoad for row i=" + i + " " + currentRowToLoad);
-
 	Template.Step_3.newRowStep3FixedStaffing();
 
-//	console.log("Do we get to after newRowStep3?");
 
 	$('#typeStaff' + i).val(currentRowToLoad[0]);
 	$('#titleStaff' + i).val(currentRowToLoad[1]);
 	$('#percentStaff' + i).val(currentRowToLoad[2]);
 	$('#salaryStaff' + i).val(currentRowToLoad[3]);
     
-//	console.log("Do we get to after this loadData block?");
+
     }
 	
     console.log("rowsInVarData is " + rowsInVarData);

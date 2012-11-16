@@ -16,9 +16,11 @@ Meteor.defer(function(){
 
 Template.Step_2.rendered = function(){
 
+
+    console.log("in step_2.rendered");
 //  $('#one_time_costs').css("backgroundColor","red");
 
- //   $('.selectTechOne').css("backgroundColor","red");
+//    $('#step_2').css("backgroundColor","red");
 
     $('#techOneType0').change(function(){
 	console.log("testing .change() on .selectTechOne");
